@@ -1,22 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Default 2 Ugly Magazine</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <script src="assets/js/paged.polyfill.js"></script>
-  <script src="assets/js/imposition.js"></script>
+	<meta charset="utf-8" />
+	<title>Default 2 Ugly Magazine</title>
+	<script src="assets/js/paged.polyfill.js"></script>
+	<script src="assets/js/imposition.js"></script>
+	<style type="text/css">
+		body {
+			--paged-layout: booklet;
+		}
+		
+		@media print {
+			@page {
+				size: 125mm 200mm;
+				margin: 0;
+				/*
+				
+				--bleed & crop marks--
+				bleed: 3mm;
+				marks: crop; 
+				
+				--page numbers--
+				@bottom-center {
+					content: counter(page);
+				}
+				*/
+			}
+		
+			@page:left {
+				 background-color: #ebebec; 
+			}
+
+			@page:right {
+				 background-color: #ebebec; 
+			}
+
+			.pp {
+				break-after: page;
+			}
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+
+		p {
+			width: 95%;
+		}
+
+		.colophon {
+			padding: 20px;
+		}
+
+/*		ol {
+		    counter-reset: list-counter 0;
+		    list-style: none;
+		}
+
+		ol li {
+		    counter-increment: list-counter 2;
+		}
+
+		ol li::before {
+		    content: counter(list-counter) ". "
+		}*/
+
+		footer {
+			position: absolute;
+			bottom: 10px;
+		}
+	</style>
 </head>
 <body>
-  <!-- Student Name -->
-  <!-- Default Page -->
-  <article class=pp1>
-    <img src="assets/images/student-name_default.png">
-  </article>
-  <!-- Ugly Page -->
-  <article class="pp2">
-    <img src="assets/images/student-name_ugly.png">
-  </article>
+	<!-- Student Name: Default Page -->
+	<img class="pp"src="assets/images/student-name_default.png">
+	
+	<!-- Student Name: Ugly Page -->
+	<img class="pp"src="assets/images/student-name_ugly.png">
+
+	<article class="colophon">
+
+		<p>Contributors:</p>
+		<ol>
+			<li>Zoe Bornhorst</li>
+			<li>Kathelia Clare</li>
+			<li>Helen Fritchman</li>
+			<li>Minty Jantarakolica</li>
+			<li>Jonathan Jiang</li>
+			<li>Natalie Leonard</li>
+			<li>Wenji Li</li>
+			<li>Shane Li</li>
+			<li>Sofia Nuñez-Morales</li>	
+			<li>Majdah Omer</li>
+			<li>Aria Proul</li>
+			<li>Diellza Veliqi</li>
+		</ol>
+		<footer>
+			<p><i>Default 2 Ugly Magazine #1</i> was produced as part of Web 2 Print, a class at California College of the Arts investigating digital and anlog systems in graphic design. Participants employ the browser, in its mutability and its fraught relationship to form, as a vehicle to interrogate and innovate layout techniques, typesetting, hierarchy, and visual form.</p>
+
+			<p>CCA<br>
+			111 8th St, San Francisco, CA<br>
+			cca.edu</p>
+		</footer>
+	</article>
 
 </body>
 </html>
