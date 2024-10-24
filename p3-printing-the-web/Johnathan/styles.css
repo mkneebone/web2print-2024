@@ -32,7 +32,7 @@ body {
 
 /*part2 grid*/
 
-.cup-container {
+.grid-containerB {
     position: relative;
     width: 33.6vw; /* 12 columns × 2.8vw */
     height: auto;
@@ -74,17 +74,10 @@ body {
     grid-template-columns: repeat(12,2.8vw);
 }
 
-.left-column{
-}
-
-.right-column{
-}
-
 /*Patterns section*/
 .patterns{
-    display: flex;
     position: absolute;
-    z-index: -1;
+  z-index: 0; /* Behind everything */
 }
 
 .grid-containerC{
