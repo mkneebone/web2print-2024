@@ -1,0 +1,478 @@
+body {
+   height: 100%;
+   width: 100%;
+   margin: 0;
+   top: 0;
+   background-color: black;
+ }
+
+h1 {
+	opacity: 0;
+	color: white;
+	font-family: Arial, sans-serif;
+	font-weight: 400;
+	margin: 1vh;
+  padding: 8vh;
+  font-size: 55px;
+}
+
+h2 {
+  color: white;
+	font-family: Arial, sans-serif;
+	font-weight: 400;
+	margin: 1vh;
+  padding: 8vh;
+  font-size: 55px;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+}
+
+.blueberry > h1 {
+  text-align: right;
+}
+
+.strawberry > h1 {
+  text-align: left;
+}
+
+.avocado > h1 {
+  text-align: left;
+}
+
+.peach > h1 {
+  text-align: right;
+}
+
+.blender > h1 {
+  text-align: center;
+  margin: 0vh;
+  padding: 5vh;
+}
+
+/* STRAWBERRY START */
+
+.leaf {
+  background: green;
+  width: 15vw;
+  height: 15vw;
+  border-radius: 5%;
+}
+
+#leaf1 {
+  position: absolute;
+  top: 2vw;
+  right: 25vw;
+  transform: rotate(35deg);
+}
+
+#leaf2 {
+  position: absolute;
+  top: 2vw;
+  right: 5vw;
+}
+
+#leaf3 {
+  position: absolute;
+  top: 2vw;
+  right: -15vw;
+  transform: rotate(65deg);
+}
+
+.strawberry {
+  background: #cf2519;
+  height: 10vw;
+  border-radius: 1%;
+  display: flex;
+}
+
+#sb1 {
+  position: absolute;
+  width: 60vw;
+  top: 20vw;
+  right: -15vw;
+}
+
+#sb2 {
+  position: absolute;
+  width: 70vw;
+  top: 31vw;
+  right: -15vw;
+}
+
+#sb3 {
+  position: absolute;
+  width: 70vw;
+  top: 42vw;
+  right: -15vw;
+}
+
+#sb4 {
+  position: absolute;
+  width: 55vw;
+  top: 53vw;
+  right: -15vw;
+}
+
+#sb5 {
+  position: absolute;
+  width: 40vw;
+  top: 64vw;
+  right: -15vw;
+}
+
+#leaf4 {
+  position: absolute;
+  top: 70vw;
+  left: 28vw;
+  transform: rotate(65deg);
+}
+
+/* BLUEBERRY START */
+
+.blueberry {
+  background: blue;
+  height: 10vw;
+  border-radius: 1%;
+}
+
+#bb1 {
+  position: absolute;
+  width: 48vw;
+  top: 88vw;
+  left: -15vw;
+}
+
+#bb2 {
+  position: absolute;
+  width: 60vw;
+  top: 99vw;
+  left: -15vw;
+}
+
+#bb3 {
+  position: absolute;
+  width: 70vw;
+  top: 110vw;
+  left: -15vw;
+}
+
+#bb4 {
+  position: absolute;
+  width: 70vw;
+  top: 121vw;
+  left: -15vw;
+}
+
+#bb5 {
+  position: absolute;
+  width: 60vw;
+  top: 132vw;
+  left: -15vw;
+}
+
+#bb6 {
+  position: absolute;
+  width: 60vw;
+  top: 143vw;
+  left: -15vw;
+}
+
+/* AVOCADO START */
+
+.avocado {
+  background: green;
+  height: 10vw;
+  border-radius: 1%;
+}
+
+#avo1 {
+  position: absolute;
+  width: 30vw;
+  top: 170vw;
+  right: 0vw;
+}
+
+#avo2 {
+  position: absolute;
+  width: 40vw;
+  top: 181vw;
+  right: 0vw;
+}
+
+#avo3 {
+  position: absolute;
+  width: 50vw;
+  top: 192vw;
+  right: 0vw;
+}
+
+#avo4 {
+  position: absolute;
+  width: 60vw;
+  top: 203vw;
+  right: 0vw;
+}
+
+#avo5 {
+  position: absolute;
+  width: 60vw;
+  top: 214vw;
+  right: 0vw;
+}
+
+#avo6 {
+  position: absolute;
+  width: 55vw;
+  top: 225vw;
+  right: 0vw;
+}
+
+#avo7 {
+  position: absolute;
+  width: 40vw;
+  top: 236vw;
+  right: 0vw;
+}
+
+.seed {
+  background: brown;
+  width: 30vw;
+  height: 40vw;
+  border-radius: 100%;
+}
+
+#sd1 {
+  position: absolute;
+  top: 195vw;
+  left: 70vw;
+  z-index: 1;
+}
+
+#leaf5 {
+  position: absolute;
+  top: 230vw;
+  left: 18vw;
+  transform: rotate(35deg);
+}
+
+/* PEACH START */
+
+.peach {
+  background: pink;
+  height: 10vw;
+  border-radius: 1%;
+}
+
+#pc1 {
+  position: absolute;
+  width: 25vw;
+  top: 250vw;
+  left: 0vw;
+}
+
+#pc2 {
+  position: absolute;
+  width: 20vw;
+  top: 250vw;
+  left: 27vw;
+}
+
+#pc3 {
+  position: absolute;
+  width: 29vw;
+  top: 262vw;
+  left: 0vw;
+}
+
+#pc4 {
+  position: absolute;
+  width: 25vw;
+  top: 262vw;
+  left: 31vw;
+}
+
+#pc5 {
+  position: absolute;
+  width: 57vw;
+  top: 273vw;
+  left: 0vw;
+}
+
+#pc6 {
+  position: absolute;
+  width: 50vw;
+  top: 284vw;
+  left: 0vw;
+}
+
+#pc7 {
+  position: absolute;
+  width: 30vw;
+  top: 296vw;
+  left: 0vw;
+}
+
+/* BLENDER START */
+
+.blender {
+  height: 10vw;
+  border-radius: 1%;
+}
+
+#bd1 {
+  position: absolute;
+  background: #326BC8;
+  width: 10vw;
+  top: 315vw;
+  left: 30vw;
+}
+
+#bd2 {
+  position: absolute;
+  background: #88A7FD;
+  width: 40vw;
+  top: 315vw;
+  left: 41vw;
+}
+
+#bd3 {
+  position: absolute;
+  background: #326BC8;
+  width: 10vw;
+  top: 315vw;
+  left: 82vw;
+}
+
+#bd4 {
+  position: absolute;
+  background: #326BC8;
+  width: 10vw;
+  top: 326vw;
+  left: 36vw;
+}
+
+#bd5 {
+  position: absolute;
+  background: #88A7FD;
+  width: 30vw;
+  top: 326vw;
+  left: 47vw;
+}
+
+#bd6 {
+  position: absolute;
+  background: #326BC8;
+  width: 10vw;
+  top: 326vw;
+  left: 78vw;
+}
+
+#bd7 {
+  position: absolute;
+  background: #616161;
+  width: 18vw;
+  top: 326vw;
+  left: 90vw;
+}
+
+#bd8 {
+  position: absolute;
+  background: #326BC8;
+  width: 10vw;
+  top: 337vw;
+  left: 39vw;
+}
+
+#bd9 {
+  position: absolute;
+  background: #88A7FD;
+  width: 25vw;
+  top: 337vw;
+  left: 50vw;
+}
+
+#bd10 {
+  position: absolute;
+  background: #326BC8;
+  width: 10vw;
+  top: 337vw;
+  left: 76vw;
+}
+
+#bd11 {
+  position: absolute;
+  background: #616161;
+  width: 5vw;
+  top: 337vw;
+  left: 103vw;
+}
+
+#bd12 {
+  position: absolute;
+  background: #326BC8;
+  width: 10vw;
+  top: 348vw;
+  left: 41vw;
+}
+
+#bd13 {
+  position: absolute;
+  background: #88A7FD;
+  width: 20vw;
+  top: 348vw;
+  left: 52vw;
+}
+
+#bd14 {
+  position: absolute;
+  background: #326BC8;
+  width: 10vw;
+  top: 348vw;
+  left: 73vw;
+}
+
+#bd15 {
+  position: absolute;
+  background: #616161;
+  width: 23vw;
+  top: 348vw;
+  left: 85vw;
+}
+
+#bd16 {
+  position: absolute;
+  background: #326BC8;
+  width: 10vw;
+  top: 359vw;
+  left: 44vw;
+}
+
+#bd17 {
+  position: absolute;
+  background: #88A7FD;
+  width: 15vw;
+  top: 359vw;
+  left: 55vw;
+}
+
+#bd18 {
+  position: absolute;
+  background: #326BC8;
+  width: 10vw;
+  top: 359vw;
+  left: 71vw;
+}
+
+#bd19 {
+  position: absolute;
+  background: #616161;
+  width: 53vw;
+  top: 370vw;
+  left: 35vw;
+  border-style: solid;
+  border-width: 1vw;
+  border-color: grey;
+}
