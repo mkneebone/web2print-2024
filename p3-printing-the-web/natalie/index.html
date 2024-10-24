@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Pink Palette Final Version</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIY Manicure Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Syne Tactile', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            font-family: 'Syne Tactile', cursive; 
+            color: #000000; 
+        }
+        .header img {
+            max-width: 100%;
+            height: auto;
+        }
+        #colorList {
+            list-style-type: none;
+            padding: 0;
+        }
+        #colorList li {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+        .color-dot {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        #chartContainer {
+            width: 100%;
+            max-width: 300px; /* Set a max width for the chart container */
+            margin-top: 20px;
+        }
+        canvas {
+            width: 100% !important; /* Ensure canvas takes the full width */
+            height: auto !important; /* Maintain aspect ratio */
+        }
+        #listContainer {
+            margin-top: 20px;
+        }
+        input, button {
+            padding: 10px;
+            margin-right: 10px;
+            font-family: 'Syne Tactile', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://images.unsplash.com/photo-1562619371-b67725b6fde2?q=80&auto=format&fit=crop" alt="Close-up of pink and blue liquid">
+    </div>
+
+
+    <main>
+      <section>
+        <h1>Give Yourself a Perfect DIY Manicure</h1>
+        <p>Skip the salon and follow this easy step-by-step tutorial to nail it every time.</p>
+        <p>Step 6: Apply several coats of color. 786 responses</p>
+      </section>
+    </main>
+
+    <div id="listContainer">
+        <input type="text" id="colorInput" placeholder="Enter a shade of pink">
+        <button id="addColorBtn">Add Color</button>
+        <ul id="colorList"></ul>
+    </div>
+
+    <div id="chartContainer">
+        <canvas id="colorChart"></canvas>
+    </div>
+
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        // Unique pink shades as hexadecimal
+        const pinkShades = [
+            '#FFC0CB', 
+            '#FFB6C1',
+            '#FF69B4',
+            '#FF1493',
+            '#DB7093',
+            '#C71585',
+            '#DDA0DD',
+            '#FF00FF',
+            '#DE3163',
+            '#F88379',
+            '#DC143C',
+            '#F3CFC6',
+            '#F8C8DC',
+            '#FAA0A0',
+            '#F89880',
+            '#F33A6A',
+            '#F5ACBC',
+            '#FF007F',
+            '#FF77FF',
+            '#FF6F91',
+            '#FF4F81',
+            '#FFB3D9',
+            '#F99BBA',
+            '#FF8CBA',
+            '#FF85B1',
+            '#FFA3C6',
+            '#FF9AAB',
+            '#F68E9B',
+            '#D5006D',
+            '#FF9FCE',
+            '#F47C92',
+            '#FFC3D0',
+            '#F6B0BD',
+        ];
+
+        let colors = [];
+        let labels = [];
+        const colorChartCtx = document.getElementById('colorChart').getContext('2d');
+
+        let colorChart = new Chart(colorChartCtx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: colors,
+                    backgroundColor: colors
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        document.getElementById('addColorBtn').addEventListener('click', function() {
+            const colorInput = document.getElementById('colorInput').value.toLowerCase();
+            if (colorInput.includes('pink')) {
+                const randomPink = pinkShades[Math.floor(Math.random() * pinkShades.length)];
+                addColorToList(colorInput, randomPink);
+                labels.push(colorInput);
+                colors.push(randomPink);
+                updateChart();
+            } else {
+                alert('Please enter a type of pink!');
+            }
+            document.getElementById('colorInput').value = ''; // Clear input field
+        });
+
+        function addColorToList(name, color) {
+            const colorList = document.getElementById('colorList');
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `<div class="color-dot" style="background-color: ${color};"></div>${name}`;
+            colorList.appendChild(listItem);
+        }
+
+        function updateChart() {
+            colorChart.data.labels = labels;
+            colorChart.data.datasets[0].data = Array(labels.length).fill(1);
+            colorChart.data.datasets[0].backgroundColor = colors;
+            colorChart.update();
+        }
+    </script>
+</body>
+</html>
+<!-- partial -->
+  <script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+</body>
+</html>

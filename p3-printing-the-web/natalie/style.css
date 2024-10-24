@@ -1,0 +1,89 @@
+body {
+    font-family: 'Syne Tactile', sans-serif; 
+    font-size: 14px;
+    white-space: nowrap; 
+}
+
+.header img {
+    width: 100%;
+    height: auto; 
+    max-height: 300px;
+ 
+}
+
+
+#chartContainer {
+    width: 50%;
+    margin-right: 20px;
+    float: left; 
+}
+
+#listContainer {
+    width: 50%;
+    float: left; 
+    margin-bottom: 20px; 
+}
+
+#colorList {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+#colorList li {
+    margin: 5px 0;
+    padding: 5px;
+   
+}
+
+#colorList li:hover {
+  transition: background-color 0.3s ease;
+}
+
+/* Clear floats if necessary */
+#listContainer::after,
+#chartContainer::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#colorInput {
+    width: 23%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    margin-right: 10px; 
+}
+
+#addColorBtn {
+    padding: 10px 15px; 
+    background-color: #ff69b4; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    cursor: pointer; 
+  transition: background-color 0.3s ease;
+}
+
+#addColorBtn:hover {
+    background-color: #ff1493; /* Darker pink on hover */
+}
+
+#historyContainer {
+    margin-top: 20px;
+    display: none;
+}
+
+#historyList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#historyList li {
+    margin: 5px 0;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
