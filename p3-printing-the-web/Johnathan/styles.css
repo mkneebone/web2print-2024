@@ -1,7 +1,6 @@
 body {
     font-family: "Silkscreen";
     margin: 0 4vw 20vh 4vw;
-    background-image: linear-gradient(to bottom right,#ffffff,#ffffff);
 }
 
 /*add textbox container*/
@@ -88,13 +87,25 @@ body {
     padding: 0 9vw 3.1vw 0vw;
     z-index: 2;
 }
-  
+
+/* leftArrow hover over enlarge */
 .arrow-container-left:hover .block.gray {
     transform: scale(1.2);
 }
 
+/* leftArrow clicked to reduced size */
+.arrow-container-left:active .block.gray {
+    transform: scale(0.8);
+}
+
+/* rightArrow hover over enlarge */
 .arrow-container-right:hover .block.gray {
     transform: scale(1.2);
+}
+
+/* rightArrow clicked to reduced size */
+.arrow-container-right:active .block.gray {
+    transform: scale(0.8);
 }
 
 /*set default block properties*/
@@ -126,11 +137,15 @@ body {
 .rotateButton{
     color: #fff;
     background-color: #DBD1A7;
-    border: #686868 solid 0.2vw;
+    border: #989898 solid 0.4vw;
     border-radius: 1vw;
     &:hover{
-        transform:scale(2);
-        box-shadow: #747474 0.1vw 0.1vw 0.3vw;
+        transform: scale(2);
+        box-shadow: #B2B2B2 0.2vw 0.2vw 0.4vw;
+        cursor: pointer;
+    }
+    &:active{
+        transform: scale(0.8);
     }
 }
 
