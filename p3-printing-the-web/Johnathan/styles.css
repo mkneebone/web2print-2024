@@ -1,6 +1,6 @@
 body {
     font-family: "Silkscreen";
-    margin: 0 4vw 0 4vw;
+    margin: 0 4vw 20vh 4vw;
     background-image: linear-gradient(to bottom right,#ffffff,#ffffff);
 }
 
@@ -20,13 +20,102 @@ body {
     visibility: hidden;
     opacity: 0;
     font-size: 1vw;
-    color: #434343;
+    color: #686868;
 }
 
-.grid-container{
+/*part1 grid*/
+.grid-containerA{
     display: grid;
     gap: 0.26vw;
     grid-template-columns: repeat(30,2.8vw);
+}
+
+/*part2 grid*/
+
+.cup-container {
+    position: relative;
+    width: 33.6vw; /* 12 columns × 2.8vw */
+    height: auto;
+}
+  
+.cup-border {
+    position: relative;
+    z-index: 2; /* Above patterns */
+    display: grid;
+    gap: 0.26vw;
+    grid-template-columns: repeat(12, 2.8vw);
+}
+  
+.cup-window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Between border and patterns */
+    display: grid;
+    gap: 0.26vw;
+    grid-template-columns: repeat(12, 2.8vw);
+}
+  
+.window-space {
+    width: 2.8vw;
+    height: 2.8vw;
+    background: transparent;
+}
+
+.part2{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.grid-containerB{
+    display: grid;
+    gap: 0.26vw;
+    grid-template-columns: repeat(12,2.8vw);
+}
+
+.left-column{
+}
+
+.right-column{
+}
+
+/*Patterns section*/
+.patterns{
+    display: flex;
+    position: absolute;
+    z-index: -1;
+}
+
+.grid-containerC{
+    display: grid;
+    gap: 0.26vw;
+    grid-template-columns: repeat(41,2.8vw);
+}
+
+/* arrow section */
+.arrow-container-left {
+    display: grid;
+    grid-template-columns: repeat(3, 2.8vw);
+    gap: 0.26vw;
+    cursor: pointer;
+    padding: 0 0vw 3.1vw 9vw;
+  }
+  
+.arrow-container-right {
+    display: grid;
+    grid-template-columns: repeat(3, 2.8vw);
+    gap: 0.26vw;
+    cursor: pointer;
+    padding: 0 9vw 3.1vw 0vw;
+}
+  
+.arrow-container-left:hover .block.gray {
+    transform: scale(1.2);
+}
+
+.arrow-container-right:hover .block.gray {
+    transform: scale(1.2);
 }
 
 /*set default block properties*/
@@ -39,6 +128,7 @@ body {
     transition-duration: 0.2s;
     &:hover{
         transform:scale(2);
+        box-shadow: #747474 0.1vw 0.1vw 0.3vw;
     }
 }
 
@@ -48,9 +138,20 @@ body {
     opacity: 1;
 }
 
+/*overide block to be no-hover*/
+.no-hover:hover {
+    transform: none;
+    box-shadow: none;
+}
+
 /*overide background to skin*/
 .skin{
     background-color: #F7E5C4;
+}
+
+/*overide background to darkskin*/
+.darkskin{
+    background-color: #FCD6B4;
 }
 
 /*overide background to lightskin*/
@@ -68,8 +169,8 @@ body {
     background-color: #FFA694;
 }
 
-/*overide background to yellow*/
-.yellow{
+/*overide background to orange*/
+.orange{
     background-color: #FFD261;
 }
 
@@ -86,4 +187,29 @@ body {
 /*overide background to gray*/
 .gray{
     background-color: #B2B2B2;
+}
+
+/*overide background to cyan*/
+.cyan{
+    background-color: #94FFED;
+}
+
+/*overide background to violet*/
+.violet{
+    background-color: #FDC5FF;
+}
+
+/*overide background to green*/
+.green{
+    background-color: #ACE885;
+}
+
+/*overide background to yellow*/
+.yellow{
+    background-color: #F9F37D;
+}
+
+/*overide background to red*/
+.red{
+    background-color: #FF6252;
 }
