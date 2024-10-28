@@ -7,17 +7,18 @@ body {
 	height: 3000px;
 }
 
+/* Green Container */
 .item-1-container {
     width: 800px; 
     height: 300px; 
     display: grid;
     grid-template-columns: repeat(56, 1fr); 
     grid-template-rows: repeat(22, 1fr); 
-    position:relative
+    position: fixed;
 }
 
 .cell {
-    border: 1px solid rgba(122, 229, 130, 0.5); 
+    border: 1px solid rgba(122, 229, 130, 1); 
     background: white;
 }
 
@@ -56,7 +57,7 @@ body {
     margin: 0;
     font-size: 10px; 
     font-family: "Space Grotesk";
-    }
+}
 
     .no-border-paragraph1 .instructions-01 .title-01 {
     display: block;
@@ -112,20 +113,20 @@ body {
             }
     
 
-/* container 2 starts here */
+/* Purple Container */
 .item-2-container {
     width: 800px; 
     height: 300px; 
     display: grid;
     grid-template-columns: repeat(56, 1fr); 
     grid-template-rows: repeat(22, 1fr); 
-    position: relative;
+    position: fixed;
     margin-left: 60px;
     margin-top: 30px;
 }
 
 .item-2-container .cell {
-    border: 1px solid rgba(118, 91, 167, 0.5); 
+    border: 1px solid rgba(118, 91, 167, 1); 
 }
 
 .item-2-container .purple {
@@ -139,7 +140,7 @@ body {
 }
 
 .cell-1 {
-    border: 1px solid rgba(118, 91, 167, 0.5); 
+    border: 1px solid rgba(118, 91, 167, 1); 
     background: white;
 }
 
@@ -208,20 +209,20 @@ body {
                 }
         
 
-/* container 3 starts here */
+/* Blue Container */
 .item-3-container {
     width: 800px; 
     height: 300px; 
     display: grid;
     grid-template-columns: repeat(56, 1fr); 
     grid-template-rows: repeat(22, 1fr); 
-    position: relative;
+    position: fixed;
     margin-top: 30px;
 
 }
 
 .item-3-container .cell {
-    border: 1px solid rgba(93, 169, 233, 0.5); 
+    border: 1px solid rgba(93, 169, 233, 1); 
 }
 
 .item-3-container .blue {
@@ -318,8 +319,7 @@ body {
                         margin: 0;
                         }
 
-/* container 4 starts here */
-
+/* Orange Container */
 .item-4-container {
     width: 800px; 
     height: 300px; 
@@ -329,6 +329,7 @@ body {
     margin-top: 60px;
     margin-left: 200px;
     position: fixed;
+    bottom: 0;
 }
 
 .item-4-container .cell {
