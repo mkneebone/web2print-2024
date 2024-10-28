@@ -23,10 +23,15 @@ body {
 }
 
 /*part1 grid*/
+.grid-container{
+    display: flex;
+}
+
 .grid-containerA{
     display: grid;
     gap: 0.26vw;
-    grid-template-columns: repeat(30,2.8vw);
+    grid-template-columns: repeat(10,2.8vw);
+    padding: 0 0.26vw 0 0;
 }
 
 /*part2 grid*/

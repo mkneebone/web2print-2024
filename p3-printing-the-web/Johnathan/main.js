@@ -9,8 +9,6 @@ const rightArrow = document.getElementById('rightArrow');
 
 // Add click handlers
 rightArrow.addEventListener('click', () => {
-    // Arrow reduce to original size
-    
     // Move patterns right by one block
     currentPosition += BLOCK_WIDTH;
     updatePatternPosition();
