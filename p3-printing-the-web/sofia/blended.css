@@ -1,0 +1,160 @@
+body {
+   height: 100%;
+   width: 100%;
+   margin: 0;
+   top: 0;
+   background-color: black;
+ }
+
+
+h1 {
+	color: black;
+	font-family: Arial, sans-serif;
+	font-weight: 400;
+	margin: 1vh;
+  padding: 1vh;
+  font-size: 55px;
+  z-index: 1000;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+}
+
+.strawberry {
+  background: #cf2519;
+  height: 100vw;
+  border-radius: 1%;
+}
+
+#sb1 {
+  position: absolute;
+  width: 50vw;
+  height: 95vw;
+  top: 15vw;
+  right: -15vw;
+  z-index: 1;
+}
+
+#sb2 {
+  position: absolute;
+  width: 30vw;
+  height: 95vw;
+  top: 15vw;
+  left: 15vw;
+  z-index: 4;
+}
+
+.avocado {
+  background: green;
+  height: 100vw;
+  border-radius: 1%;
+}
+
+#avo1 {
+  position: absolute;
+  width: 60vw;
+  height: 30vw;
+  top: 1vw;
+  left: 0vw;
+}
+
+#avo2 {
+  position: absolute;
+  width: 30vw;
+  height: 60vw;
+  top: 50vw;
+  right: 30vw;
+}
+
+.blueberry {
+  background: blue;
+  height: 100vw;
+  border-radius: 1%;
+}
+
+#bb1 {
+  position: absolute;
+  width: 20vw;
+  top: 10vw;
+  left: 35vw;
+  z-index: 2;
+}
+
+#bb2 {
+  position: absolute;
+  width: 8vw;
+  height: 50vw;
+  top: 60vw;
+  right: 0vw;
+  z-index: 2;
+}
+
+#bb3 {
+  position: absolute;
+  width: 10vw;
+  height: 90vw;
+  top: 20vw;
+  left: 0vw;
+  z-index: 2;
+}
+
+#bb4 {
+  position: absolute;
+  width: 10vw;
+  height: 10vw;
+  top: 0vw;
+  left: 0vw;
+  z-index: 2;
+}
+
+#bb5 {
+  position: absolute;
+  width: 10vw;
+  height: 40vw;
+  top: 0vw;
+  right: 0vw;
+  z-index: 2;
+}
+
+.peach {
+  background: pink;
+  height: 20vw;
+  border-radius: 1%;
+  z-index: 1;
+}
+
+#pc1 {
+  position: absolute;
+  width: 50vw;
+  top: 2vw;
+  left: 0vw;
+}
+
+#pc2 {
+  position: absolute;
+  width: 20vw;
+  top: 35vw;
+  right: 20vw;
+}
+
+#pc3 {
+  position: absolute;
+  width: 20vw;
+  height: 50vw;
+  top: 60vw;
+  right: 20vw;
+}
+
+.button {
+  position: absolute;
+  background: yellow;
+  width: 30vw;
+  height: 12vh;
+  top: 90vw;
+  right: 35vw;
+  z-index: 10;
+  border-style: solid;
+  border-width: 5px;
+  text-align: center;
+}
