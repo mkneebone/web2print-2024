@@ -6,6 +6,8 @@ const BLOCK_WIDTH = 3.06; // Width of one block in vw units (2.8width+0.26gap)
 const patterns = document.querySelector('.grid-containerC');
 const leftArrow = document.getElementById('leftArrow');
 const rightArrow = document.getElementById('rightArrow');
+const rotateButton = document.getElementById('rotateButton');
+console.log('get rotateButton success');
 
 // Add click handlers
 rightArrow.addEventListener('click', () => {
@@ -23,6 +25,24 @@ leftArrow.addEventListener('click', () => {
 function updatePatternPosition() {
     // Apply the transform with vw units
     patterns.style.transform = `translateX(${currentPosition}vw)`;
+}
+
+function updatePatternPosition() {
+  // Get the total width of the pattern container (all blocks)
+  const totalPatternWidth = 53 * BLOCK_WIDTH; // 53 blocks in pattern width
+  
+  // If moved too far right, reset to start
+  if (currentPosition >= 0) {
+      currentPosition = -159.12;
+  }
+  
+  // If moved too far left, reset to end
+  if (currentPosition <= -totalPatternWidth) {
+      currentPosition = 0;
+  }
+  
+  // Apply the transform
+  patterns.style.transform = `translateX(${currentPosition}vw)`;
 }
 
 // Keyboard handlers
