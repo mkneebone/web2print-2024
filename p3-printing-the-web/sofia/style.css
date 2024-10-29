@@ -4,6 +4,7 @@ body {
    margin: 0;
    top: 0;
    background-color: black;
+   overflow-x: hidden;
  }
 
 h1 {
@@ -11,8 +12,8 @@ h1 {
 	color: white;
 	font-family: Arial, sans-serif;
 	font-weight: 400;
-	margin: 10px;
-  padding: 10px;
+	margin: 1vh;
+  padding: 5vh;
   font-size: 55px;
 }
 
@@ -20,11 +21,29 @@ h2 {
   color: white;
 	font-family: Arial, sans-serif;
 	font-weight: 400;
-	margin: 10px;
-  padding: 10px;
+	margin: 1vh;
+  padding: 5vh;
   font-size: 55px;
   text-align: center;
 }
+
+a:link, a:visited {
+  text-decoration: none;
+}
+#bd19:hover {
+  background: yellow;
+}
+
+h2:hover {
+  color: black;
+	font-family: Arial, sans-serif;
+	font-weight: 400;
+	margin: 1vh;
+  padding: 8vh;
+  font-size: 55px;
+  text-align: center;
+}
+
 
 .container {
   position: relative;
@@ -192,49 +211,49 @@ h2 {
   position: absolute;
   width: 30vw;
   top: 170vw;
-  right: 0vw;
+  right: -15vw;
 }
 
 #avo2 {
   position: absolute;
   width: 40vw;
   top: 181vw;
-  right: 0vw;
+  right: -15vw;
 }
 
 #avo3 {
   position: absolute;
   width: 50vw;
   top: 192vw;
-  right: 0vw;
+  right: -15vw;
 }
 
 #avo4 {
   position: absolute;
   width: 60vw;
   top: 203vw;
-  right: 0vw;
+  right: -15vw;
 }
 
 #avo5 {
   position: absolute;
   width: 60vw;
   top: 214vw;
-  right: 0vw;
+  right: -15vw;
 }
 
 #avo6 {
   position: absolute;
   width: 55vw;
   top: 225vw;
-  right: 0vw;
+  right: -15vw;
 }
 
 #avo7 {
   position: absolute;
   width: 40vw;
   top: 236vw;
-  right: 0vw;
+  right: -15vw;
 }
 
 .seed {
@@ -247,7 +266,7 @@ h2 {
 #sd1 {
   position: absolute;
   top: 195vw;
-  left: 70vw;
+  left: 80vw;
   z-index: 1;
 }
 

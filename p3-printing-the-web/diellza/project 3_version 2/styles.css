@@ -1,0 +1,419 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+	height: 3000px;
+}
+
+/* Green Container */
+.item-1-container {
+    width: 800px; 
+    height: 300px; 
+    display: grid;
+    grid-template-columns: repeat(56, 1fr); 
+    grid-template-rows: repeat(22, 1fr); 
+    position: fixed;
+}
+
+.cell {
+    border: 1px solid rgba(122, 229, 130, 1); 
+    background: white;
+}
+
+.item-1-container .no-border {
+    border: none; 
+    background-color: white; 
+}
+
+.empty {
+    opacity: 0;
+}
+
+.green {
+    background-color: #7AE582; 
+}
+
+
+.no-border-head-title {
+    z-index: 1;
+    color: #7AE582;
+    position: absolute;
+    top: 30px;
+    left: 268px;
+    border: 0;
+    font-size: 17.5px;
+    font-family: "Space Grotesk"
+}
+
+.no-border-paragraph1 .instructions-01 {
+    z-index: 1;
+    color: #7AE582; 
+    width: 350px;
+    position: absolute;
+    top: 65px;
+    left: 140px;
+    margin: 0;
+    font-size: 10px; 
+    font-family: "Space Grotesk";
+}
+
+    .no-border-paragraph1 .instructions-01 .title-01 {
+    display: block;
+    margin-left: 0; 
+    font-weight: regular;
+    margin: 0;
+    }
+    .instructions-01 .body-01 {
+    display: block;
+    padding-left: 20px;
+    }
+
+    .no-border-paragraph1 .instructions-01 .title-02 {
+        display: block;
+        margin-left: 0; 
+        font-weight: regular;
+        margin: 0;
+        }
+        .instructions-01 .body-02 {
+        display: block;
+        padding-left: 20px;
+        }
+    
+
+    .no-border-paragraph2 .instructions-02 {
+        z-index: 1;
+        color: #7AE582; 
+        width: 350px;
+        position: absolute;
+        top: 170px;
+        left: 315px;
+        margin: 0;
+        font-size: 10px; 
+        font-family: "Space Grotesk";
+        }
+    
+        .no-border-paragraph1 .instructions-02 .title-03 {
+        display: block;
+        margin-left: 0; /* Ensures title aligns to the left */
+        font-weight: regular;
+        margin: 0;
+        }
+        .instructions-02 .body-03 {
+        display: block;
+        padding-left: 25px;
+        margin: 0;
+        }
+
+        .instructions-02 .body-04 {
+            display: block;
+            padding-left: 25px;
+            margin: 0;
+            }
+    
+
+/* Purple Container */
+.item-2-container {
+    width: 800px; 
+    height: 300px; 
+    display: grid;
+    grid-template-columns: repeat(56, 1fr); 
+    grid-template-rows: repeat(22, 1fr); 
+    position: fixed;
+    margin-left: 60px;
+    margin-top: 30px;
+}
+
+.item-2-container .cell {
+    border: 1px solid rgba(118, 91, 167, 1); 
+}
+
+.item-2-container .purple {
+    background-color: #765BA7 !important; 
+    border: none; 
+}
+
+.item-2-container .no-border {
+    background-color: white;
+    border: none; 
+}
+
+.cell-1 {
+    border: 1px solid rgba(118, 91, 167, 1); 
+    background: white;
+}
+
+.item-2-container .no-border-paragraph3 .instructions-03 {
+    z-index: 1;
+    color: #765BA7; 
+    width: 350px;
+    position: absolute;
+    top: 48px;
+    left: 147px;
+    margin: 0;
+    font-size: 10px; 
+    font-family: "Space Grotesk";
+    border: none;
+    }
+
+    .no-border-paragraph3 .instructions-03 .title-05 {
+    display: block;
+    margin-left: 0; /* Ensures title aligns to the left */
+    font-weight: regular;
+    margin: 0;
+    }
+
+    .instructions-03 .body-05 {
+    display: block;
+    padding-left: 25px;
+    margin: 0;
+    }
+
+    .instructions-03 .body-06 {
+        display: block;
+        padding-left: 25px;
+        margin: 0;
+        }
+
+        .item-2-container .no-border-paragraph4 .instructions-04 {
+            z-index: 1;
+            color: #765BA7; 
+            width: 350px;
+            position: absolute;
+            top: 155px;
+            left: 320px;
+            margin: 0;
+            font-size: 10px; 
+            font-family: "Space Grotesk";
+            border: none;
+            }
+        
+            .no-border-paragraph3 .instructions-04 .title-07 {
+            display: block;
+            margin-left: 0; /* Ensures title aligns to the left */
+            font-weight: regular;
+            margin: 0;
+            }
+        
+            .instructions-04 .body-07 {
+            display: block;
+            padding-left: 25px;
+            margin: 0;
+            }
+        
+            .instructions-04 .body-08 {
+                display: block;
+                padding-left: 25px;
+                margin: 0;
+                }
+        
+
+/* Blue Container */
+.item-3-container {
+    width: 800px; 
+    height: 300px; 
+    display: grid;
+    grid-template-columns: repeat(56, 1fr); 
+    grid-template-rows: repeat(22, 1fr); 
+    position: fixed;
+    margin-top: 30px;
+
+}
+
+.item-3-container .cell {
+    border: 1px solid rgba(93, 169, 233, 1); 
+}
+
+.item-3-container .blue {
+    background-color: #5DA9E9 !important; 
+    border: none; 
+}
+
+.item-3-container .no-border-1 {
+	border: none;
+	background-color: white;
+
+}
+
+.item-3-container .no-border-paragraph5 .instructions-05 {
+    z-index: 1;
+    color:#5DA9E9 ; 
+    width: 350px;
+    position: absolute;
+    top: 35px;
+    left: 140px;
+    margin: 0;
+    font-size: 10px; 
+    font-family: "Space Grotesk";
+    border: none;
+    }
+
+.item-3-container .no-border-paragraph5 .instructions-05 .title-09 {
+    display: block;
+    margin-left: 0; /* Ensures title aligns to the left */
+    font-weight: regular;
+    margin: 0;
+    }
+
+    .item-3-container .no-border-paragraph5 .instructions-05 .body-09 {
+    display: block;
+    padding-left: 25px;
+    margin: 0;
+    }
+
+.item-3-container .instructions-05 .body-09 {
+        display: block;
+        padding-left: 25px;
+        margin: 0;
+        }
+
+        .item-3-container .no-border-paragraph6 .instructions-06 {
+            z-index: 1;
+            color:#5DA9E9 ; 
+            width: 350px;
+            position: absolute;
+            top: 145px;
+            left: 300px;
+            margin: 0;
+            font-size: 10px; 
+            font-family: "Space Grotesk";
+            border: none;
+            }
+        
+            .no-border-paragraph6 .instructions-06 .title-10 {
+            display: block;
+            margin-left: 0; /* Ensures title aligns to the left */
+            font-weight: regular;
+            margin: 0;
+            }
+        
+            .instructions-06 .body-10 {
+            display: block;
+            padding-left: 25px;
+            margin: 0;
+            }
+        
+            .instructions-06 .body-11 {
+                display: block;
+                padding-left: 25px;
+                margin: 0;
+                }
+
+                .no-border-paragraph6 .instructions-06 .title-11 {
+                    display: block;
+                    margin-left: 0; /* Ensures title aligns to the left */
+                    font-weight: regular;
+                    margin: 0;
+                    }
+                
+                    .instructions-06 .body-11 {
+                    display: block;
+                    padding-left: 25px;
+                    margin: 0;
+                    }
+                
+                    .instructions-06 .body-12 {
+                        display: block;
+                        padding-left: 25px;
+                        margin: 0;
+                        }
+
+/* Orange Container */
+.item-4-container {
+    width: 800px; 
+    height: 300px; 
+    display: grid;
+    grid-template-columns: repeat(56, 1fr); 
+    grid-template-rows: repeat(22, 1fr); 
+    margin-top: 60px;
+    margin-left: 200px;
+    position: fixed;
+    bottom: 0;
+}
+
+.item-4-container .cell {
+    border: 1px solid rgba(248, 77, 52, 0.5);
+    background: white;
+}
+
+.item-4-container .no-border-paragraph14 {
+    border: none; 
+    background-color: white; 
+}
+
+.item-4-container .no-border {
+    border: none; 
+    background-color: white; 
+} 
+.item-4-container .empty {
+    opacity: 0;
+}
+
+.item-4-container .orange {
+    background-color: #f84d34; 
+}
+
+.no-border-paragraph13 .instructions-13 {
+    z-index: 1;
+    color: #f84d34; 
+    width: 400px;
+    position: absolute;
+    top: 40px;
+    left: 140px;
+    margin: 0;
+    font-size: 10px; 
+    font-family: "Space Grotesk";
+    background-color: white;
+    border: none;
+}
+
+.instructions .title-13 {
+    display: block; 
+    margin-left: 0; /* Ensures title aligns to the left */
+    font-weight: regular;
+    margin: 0;
+}
+
+.instructions-13 .body-13 {
+    display: block;
+    padding-left: 25px;
+    margin: 0;
+}
+
+
+.no-border-paragraph14 .instructions-14 {
+    font-size: 10px;
+    font-family: "Space Grotesk", sans-serif;
+    color: #f84d34;
+    width: 350px;
+    position: absolute;
+    top: 135px;
+    left: 300px;
+}
+
+.no-border-paragraph14 .instructions-14 .title-14 {
+    display: block;
+    margin-left: 0; /* Ensures title aligns to the left */
+    font-weight: regular;
+    margin: 0;
+}
+
+.no-border-paragraph14 .instructions-14 .body-14 {
+    display: block;
+    padding-left: 25px;
+    margin: 0;
+}
+
+.no-border-paragraph14 .instructions-14 .title-15 {
+    display: block;
+    margin-left: 0; /* Ensures title aligns to the left */
+    font-weight: regular;
+    margin: 0;
+}
+
+.no-border-paragraph14 .instructions-14 .body-15 {
+    display: block;
+    padding-left: 25px;
+    margin: 0;
+}
