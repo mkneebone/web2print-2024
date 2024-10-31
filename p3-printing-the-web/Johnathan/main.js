@@ -2,6 +2,23 @@
 let currentPosition = 0;
 const BLOCK_WIDTH = 3.06; // Width of one block in vw units (2.8width+0.26gap)
 
+function updateBLOCK_WIDTH(){
+  let BLOCK_WIDTH;
+  if(window.innerWidth > 768) {
+    BLOCK_WIDTH = 3.06; // Width of one block in vw units (2.8width+0.26gap)
+  } else {
+    BLOCK_WIDTH = 5.5; // Mobile width (5 + 0.5 gap)
+  }
+}
+
+// Initial setup
+updateBLOCK_WIDTH();
+
+// Update BLOCK_WIDTH when window is resized
+window.addEventListener('resize', () => {
+  updateBLOCK_WIDTH();
+});
+
 // Get DOM elements
 const patterns = document.querySelector('.grid-containerC');
 const leftArrow = document.getElementById('leftArrow');
@@ -120,4 +137,7 @@ function setupHoverSound() {
 document.addEventListener('DOMContentLoaded', () => {
   setupHoverSound();
   // ... your other initialization code
+  updateBLOCK_WIDTH(); // Set initial BLOCK_WIDTH
+  setupHoverSound();
+  updatePatternPosition();
 });

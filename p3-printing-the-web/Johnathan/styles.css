@@ -225,3 +225,85 @@ body {
 .red{
     background-color: #FF6252;
 }
+
+@media only screen and (max-width: 768px) {
+
+    /* Change grid-container from flex row to column */
+    .grid-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Adjust text size for mobile */
+    .textbox {
+        font-size: 4vw;
+        margin: 10vw 5vw;
+    }
+
+    /* Adjust grid sizes for mobile */
+    .grid-containerA {
+        grid-template-columns: repeat(10,5vw);
+        gap: 0.5vw;
+        padding: 0.2vw;
+    }
+
+    /* Add these new styles for grid-containerB and cup-container */
+    .grid-containerB {
+        grid-template-columns: repeat(12,5vw);
+        gap: 0.5vw;
+    }
+
+    .cup-container {
+        grid-template-columns: repeat(12,5vw);
+        gap: 0.5vw;
+    }
+
+    /* Adjust part2 layout for mobile */
+    .part2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 2vw;
+    }
+
+    /* Adjust arrow containers for mobile */
+    .arrow-container-left {
+        grid-template-columns: repeat(3, 5vw);
+        gap: 0.5vw;
+        padding: 2vw 0;
+    }
+
+    .arrow-container-right {
+        grid-template-columns: repeat(3, 5vw);
+        gap: 0.5vw;
+        padding: 2vw 0;
+    }
+
+    /* Adjust patterns section for mobile */
+    .patterns {
+        width: 60vw;
+    }
+
+    .grid-containerC {
+        grid-template-columns: repeat(53,5vw);
+        gap: 0.5vw;
+    }
+
+    /* Universal block size for all containers */
+    .block {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    /* Adjust hover text for mobile */
+    .hover-text {
+        font-size: 2vw;
+    }
+
+    /* Adjust rotate button for mobile */
+    .rotateButton {
+        font-size: 3vw;
+        padding: 2vw;
+        border-width: 0.8vw;
+    }
+
+}
