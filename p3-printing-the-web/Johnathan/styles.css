@@ -119,7 +119,7 @@ body {
     height: 2.8vw;
     background-color: #f7f7f7;
     /*add enlarge effect*/
-    transition-duration: 0.2s;
+    transition-duration: 0.1s;
     &:hover{
         transform:scale(2);
         box-shadow: #747474 0.1vw 0.1vw 0.3vw;

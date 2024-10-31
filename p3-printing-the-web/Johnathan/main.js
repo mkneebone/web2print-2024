@@ -11,6 +11,24 @@ const rotateButton = document.getElementById('rotateButton');
 // check if get rotateButton successfully
 console.log('get rotateButton success');
 
+// Add click handlers
+rightArrow.addEventListener('click', () => {
+    // Move patterns right by one block
+    currentPosition += BLOCK_WIDTH;
+    updatePatternPosition();
+});
+
+leftArrow.addEventListener('click', () => {
+    // Move patterns left by one block
+    currentPosition -= BLOCK_WIDTH;
+    updatePatternPosition();
+});
+
+function updatePatternPosition() {
+    // Apply the transform with vw units
+    patterns.style.transform = `translateX(${currentPosition}vw)`;
+}
+
 function updatePatternPosition() {
   // Get the total width of the pattern container (all blocks)
   const totalPatternWidth = 53 * BLOCK_WIDTH; // 53 blocks in pattern width
@@ -82,3 +100,24 @@ function toggleRotation() {
       }
   }
 }
+
+// HoverOver Block Bubble Burst Effect
+function setupHoverSound() {
+  const hoverSound = document.getElementById('hoverSound');
+  const blocks = document.querySelectorAll('.block:not(.white):not(.no-hover)');
+  
+  blocks.forEach(block => {
+      block.addEventListener('mouseenter', () => {
+          // Reset sound to start
+          hoverSound.currentTime = 0;
+          // Play sound
+          hoverSound.play();
+      });
+  });
+}
+
+// Add this to your DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', () => {
+  setupHoverSound();
+  // ... your other initialization code
+});
