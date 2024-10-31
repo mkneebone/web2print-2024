@@ -7,25 +7,9 @@ const patterns = document.querySelector('.grid-containerC');
 const leftArrow = document.getElementById('leftArrow');
 const rightArrow = document.getElementById('rightArrow');
 const rotateButton = document.getElementById('rotateButton');
+
+// check if get rotateButton successfully
 console.log('get rotateButton success');
-
-// Add click handlers
-rightArrow.addEventListener('click', () => {
-    // Move patterns right by one block
-    currentPosition += BLOCK_WIDTH;
-    updatePatternPosition();
-});
-
-leftArrow.addEventListener('click', () => {
-    // Move patterns left by one block
-    currentPosition -= BLOCK_WIDTH;
-    updatePatternPosition();
-});
-
-function updatePatternPosition() {
-    // Apply the transform with vw units
-    patterns.style.transform = `translateX(${currentPosition}vw)`;
-}
 
 function updatePatternPosition() {
   // Get the total width of the pattern container (all blocks)
@@ -69,3 +53,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize pattern position
     updatePatternPosition();
 });
+
+// Define isRotating
+let isRotating = false;
+let rotationInterval = null;
+
+// toggleRotation function
+rotateButton.addEventListener('click', toggleRotation);
+
+function toggleRotation() {
+  if (!isRotating) {
+      // Start rotation
+      isRotating = true;
+      rotateButton.innerHTML = '&nbspstop&nbsp';
+      // Update pattern position every 0.3 second
+      rotationInterval = setInterval(() => {
+          currentPosition -= BLOCK_WIDTH;
+          updatePatternPosition();
+      }, 300);
+  } else {
+      // Stop rotation
+      isRotating = false;
+      rotateButton.innerHTML = '&nbsprotate&nbsp';
+      // Clear the interval
+      if (rotationInterval) {
+          clearInterval(rotationInterval);
+          rotationInterval = null;
+      }
+  }
+}
