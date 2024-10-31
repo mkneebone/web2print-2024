@@ -1,0 +1,383 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+  overflow: visible;
+}
+
+.container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background-color: #ffe0d4;
+  overflow: visible;
+  z-index: 1;
+}
+
+/* Letters */
+.letter {
+  position: absolute;
+  font-size: 200px;
+  font-weight: bold;
+  font-family: Arial;
+  text-align: center;
+}
+
+.letter-B {
+  position: absolute;
+  font-size: 100px;
+  font-weight: bold;
+  font-family: Arial;
+  color: #fc510f;
+  z-index: 2;
+  top: 427px;
+  left: 15%;
+}
+
+.letter-O1 {
+  position: absolute;
+  font-size: 100px;
+  font-weight: bold;
+  font-family: Arial;
+  color: white;
+  z-index: 2;
+  top: 30%;
+  left: 25%;
+}
+
+.letter-O2 {
+  position: absolute;
+  font-size: 100px;
+  font-weight: bold;
+  font-family: Arial;
+  color: blue;
+  z-index: 2;
+  top: 10%;
+  left: 40%;
+}
+
+.letter-O3 {
+  position: absolute;
+  font-size: 100px;
+  font-weight: bold;
+  font-family: Arial;
+  color: white;
+  z-index: 2;
+  top: 30%;
+  left: 55%;
+}
+
+.letter-M1 {
+  position: absolute;
+  font-size: 100px;
+  font-weight: bold;
+  font-family: Arial;
+  color: #fc510f;
+  z-index: 0;
+  top: 52%;
+  left: 55%;
+}
+
+.letter-M2 {
+  position: absolute;
+  font-size: 100px;
+  font-weight: bold;
+  font-family: Arial;
+  color: #fc510f;
+  z-index: 4;
+  top: 52%;
+  left: 64%;
+}
+
+/* Slashmark */
+.slashmark {
+  position: absolute;
+  width: 12px;
+  height: 100px;
+  background-color: #fc510f;
+  z-index: 0;
+  left: 45%;
+  top: 50%;
+  transform: rotate(10deg);
+}
+
+.vertical-line {
+  position: absolute;
+  width: 10px;
+  background-color: rgba(0, 0, 255, 0.5); /* Blue with 50% opacity */
+  z-index: 4;
+}
+
+.vertical-line.top {
+  height: 37%;
+  bottom: 400px;
+  width: 14px;
+  left: 67%;
+}
+
+.vertical-line.bottom {
+  height: 180px;
+  top: 400px;
+  left: 21%;
+}
+
+/* Masks */
+.mask {
+  position: absolute;
+  /*background-color: #f5deb3;*/
+  background-color: #ffe0d4;
+  z-index: 3;
+}
+
+.mask-B {
+  width: 80px;
+  height: 80px;
+  top: 500px;
+  left: 15%;
+  background-color:white;
+}
+
+.mask-M1 {
+  width: 40px;
+  height: 80px;
+  top: 55%;
+  left: 52.6%;
+}
+.mask-M11 {
+  width: 40px;
+  height: 80px;
+  top: 55%;
+  left: 66.4%;
+  z-index:3;
+}
+
+.mask-M2 {
+  width: 6px;
+  height: 80px;
+  top: 55%;
+  left: 65.4%;
+  z-index:5;
+}
+.mask-M3 {
+  width: 15px;
+  height: 80px;
+  top: 55%;
+  left: 66.6%;
+  z-index:6;
+}
+
+.mask-O1 {
+  width: 80px;
+  height: 50px;
+  top: 44%;
+  left: 25%;
+}
+.mask-O11 {
+  width: 80px;
+  height: 80px;
+  top: 30%;
+  left: 34%;
+}
+
+.mask-O2 {
+  width: 80px;
+  height: 50px;
+  top: 20%;
+  left: 40%;
+}
+.mask-O33 {
+  width: 80px;
+  height: 80px;
+  top: 30%;
+  left: 45%;
+}
+
+.mask-O3 {
+  width: 80px;
+  height: 50px;
+  top: 44%;
+  left: 55%;
+}
+.mask-slash-t {
+  width: 40px;
+  height: 40px;
+  top: 43.2%;
+  left: 42%;
+}
+.mask-slash-b {
+  width: 40px;
+  height: 40px;
+  top: 69.7%;
+  left: 40%;
+}
+
+
+
+.container:hover .letter-O2 {
+    animation: expandAndMove 2s ease forwards;
+}
+@keyframes expandAndMove {
+    0% {
+        transform: translateY(20px) scale(1);
+    }
+    100% {
+        transform: translate(-10px, -60px);
+    }
+}
+.container:hover .mask-O2 {
+    animation: expandAndMove 2s ease forwards;
+}
+
+.container:hover .letter-O3 {
+    animation: expandAndMove2 2s ease forwards;
+}
+@keyframes expandAndMove2 {
+    0% {
+      transform: rotate(0) translate (0);
+    }
+    100% {
+        transform: translate(40px, -60px); 
+    }
+}
+.container:hover .mask-O3 {
+    animation: expandAndMove2 2s ease forwards;
+}
+.container:hover .mask-O33 {
+    animation: expandAndMove2 2s ease forwards;
+}
+.container:hover .letter-O1 {
+    animation: expandAndMove3 2s ease forwards;
+}
+@keyframes expandAndMove3 {
+    0% {
+      transform: rotate(0) translate (0);
+    }
+    100% {
+        transform: translate(-40px, -60px); 
+    }
+}
+.container:hover .mask-O1 {
+    animation: expandAndMove3 2s ease forwards;
+}
+
+.container:hover .mask-O11 {
+    animation: expandAndMove3 2s ease forwards;
+}
+
+.container:hover .letter-B {
+    animation: dropDownB 14s ease forwards;
+}
+.container:hover .mask-B {
+    animation: dropDownB 14s ease forwards;
+}
+
+@keyframes dropDownB {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(300px); 
+    }
+}
+
+.container:hover .letter-M2 {
+    animation: moveRight 10s ease forwards;
+}
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+    100% {
+        transform: translateX(135px) rotate(15deg) scale(.6);
+    }
+}
+.container:hover .letter-M1 {
+    animation: moveIn 6s ease forwards;
+}
+
+@keyframes moveIn {
+    0% {
+    }
+    100% {
+        transform: translateX(160px) rotate(15deg) scale(.4);
+    }
+}
+
+.container:hover .vertical-line.bottom {
+    animation: moveDown 5s ease forwards;
+}
+
+@keyframes moveDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100px); 
+    }
+}
+
+.container:hover .vertical-line.top {
+    animation: moveUp 5s ease forwards;
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100px);
+    }
+}
+
+.container:hover .slashmark {
+    animation: rotateAndLower 3s ease forwards;
+}
+
+@keyframes rotateAndLower {
+    0% {
+        transform: rotate(0deg) translateY(0);
+    }
+    100% {
+        transform: rotate(80deg) translateY(100px) scale(.65);
+    }
+}
+.container:hover .mask-slash-t {
+    animation: rotateAndLower 3s ease forwards;
+}
+.container:hover .mask-slash-b {
+    animation: rotateAndLower 3s ease forwards;
+}
+
+.circle-button {
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  opacity: 0.1;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+}
+
+/* Add hover effect */
+.circle-button:hover {
+  transform: scale(1.1);
+  opacity: 0.5;
+}
+
+/* Position the left button */
+.left-button {
+  position:absolute;
+  left:320px;
+}
+
+/* Position the right button */
+.right-button {
+  position:absolute;
+  right:320px;
+}
+
