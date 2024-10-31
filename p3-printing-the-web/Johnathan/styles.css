@@ -270,12 +270,18 @@ body {
         grid-template-columns: repeat(3, 5vw);
         gap: 0.5vw;
         padding: 2vw 0;
+        position: relative;
+        top: 70vw;
+        right: 20vw;
     }
 
     .arrow-container-right {
         grid-template-columns: repeat(3, 5vw);
         gap: 0.5vw;
         padding: 2vw 0;
+        position: relative;
+        top: 11vw;
+        left: 20vw;
     }
 
     /* Adjust patterns section for mobile */
@@ -306,4 +312,8 @@ body {
         border-width: 0.8vw;
     }
 
+    /* Adjust left column */
+    .left-column{
+        height: 0px;
+    }
 }
