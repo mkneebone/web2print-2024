@@ -2,32 +2,33 @@ body {
     font-family: 'Syne Tactile', sans-serif; 
     font-size: 14px;
     white-space: nowrap; 
+    position: relative;
+    margin: 0;
 }
-
-.header img {
-    width: 100%;
-    height: auto; 
-    max-height: 300px;
- 
-}
-
 
 #chartContainer {
-    width: 50%;
-    margin-right: 20px;
-    float: left; 
+    float: center;
+    width: 900px;
+    margin-right: 60px;
+    position: fixed;
 }
 
-#listContainer {
-    width: 50%;
-    float: left; 
+#listContainer { 
     margin-bottom: 20px; 
+    
+    position: relative;
+}
+
+canvas {
+    width: 100% !important;
+    height: 400px !important;
 }
 
 #colorList {
     list-style-type: none;
     padding: 0;
     margin-top: 10px;
+   
 }
 
 #colorList li {
@@ -49,7 +50,7 @@ body {
 }
 
 #colorInput {
-    width: 23%; 
+    width: 50%; 
     padding: 10px; 
     border: 1px solid #ccc; 
     border-radius: 5px; 
@@ -65,7 +66,7 @@ body {
     border-radius: 5px; 
     font-size: 16px; 
     cursor: pointer; 
-  transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 #addColorBtn:hover {
@@ -86,4 +87,23 @@ body {
     margin: 5px 0;
     padding: 5px;
     border: 1px solid #ddd;
+}
+
+.color-dot {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+#colorList li:hover .color-dot {
+    transform: scale(1.2); /* Enlarge the dot on hover */
+}
+
+
+#colorList li:hover {
+    background-color: #ffe0f0; /* Light pink on hover */
+    transform: scale(1.02); /* Slightly enlarge the item */
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }

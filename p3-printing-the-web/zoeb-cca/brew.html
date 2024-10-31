@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+<link rel="stylesheet" type="text/css" href="style-brew.css">
+
+</head>
+<body>
+  <a href="bloom.html" class="circle-button left-button" target="_blank"></a>
+
+    <div class="horizontal-line h1"></div>
+    <div class="horizontal-line h2"></div>
+
+    <div class="vertical-line v1"></div>
+    <div class="vertical-line v2"></div>
+    <div class="vertical-line v3"></div>
+    <div class="vertical-line v4"></div>
+    <div class="vertical-line v5"></div>
+
+    <div class="letter b1">b</div>
+    <div class="letter b2">b</div>
+    <div class="letter b3">b</div>
+
+    <div class="letter e1">e</div>
+    <div class="letter e2">e</div>
+    <div class="letter e3">E</div>
+
+    <div class="letter r">R</div>
+
+    <div class="letter w1">w</div>
+    <div class="letter w2">W</div>
+    
+    <div class="mask mask-b"></div>
+    <div class="mask mask-cornertop"></div>
+    <div class="mask mask-cornerbottom"></div>
+    
+  </div>
+
+ <script>
+  const letters = document.querySelectorAll('.letter');
+
+  letters.forEach(letter => {
+    // Add hover event to trigger the animation
+    letter.addEventListener('mouseenter', () => {
+      letter.style.animation = 'dropDown 13s ease forwards';
+    });
+
+    // Reset position when the animation ends
+    letter.addEventListener('animationend', () => {
+      letter.style.animation = 'none'; // Reset animation
+      letter.style.transform = 'translateY(0)'; // Reset position to original
+    });
+  });
+</script>
+
+<script>
+  const lines = document.querySelectorAll('.vertical-line');
+
+lines.forEach(line => {
+  line.addEventListener('mouseenter', () => {
+    line.style.animation = 'dropDown 20s ease forwards';
+  });
+
+  line.addEventListener('animationend', () => {
+    line.style.animation = 'none'; 
+    line.style.transform = 'translateY(0)'; 
+  });
+});
+</script>
+
+</body>
+</html>
+
+

@@ -2,12 +2,12 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Pink Palette Final Version</title>
+  <title>Pink Color Palette</title>
   <link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,19 +24,26 @@
         h1 {
             font-family: 'Syne Tactile', cursive; 
             color: #000000; 
+            font-size: 36px;
+            padding: 5px;
         }
-        .header img {
-            max-width: 100%;
-            height: auto;
-        }
+       
+        
         #colorList {
             list-style-type: none;
             padding: 0;
+            
         }
+
+        #colorList li:hover {
+            font-weight: bold; 
+            font-size: 18px; 
+}
         #colorList li {
             margin: 5px 0;
             display: flex;
             align-items: center;
+        
         }
         .color-dot {
             width: 20px;
@@ -45,29 +52,42 @@
             border-radius: 50%;
         }
         #chartContainer {
-            width: 100%;
-            max-width: 300px; /* Set a max width for the chart container */
-            margin-top: 20px;
+            float: right;
+            width: 900px;
+            margin-right: 60px;
+            position: relative;
+            
         }
         canvas {
-            width: 100% !important; /* Ensure canvas takes the full width */
-            height: auto !important; /* Maintain aspect ratio */
+            width: 100% !important;
+            height: auto !important;
         }
         #listContainer {
-            margin-top: 20px;
+    
+            position: absolute;
+
         }
         input, button {
             padding: 10px;
             margin-right: 10px;
             font-family: 'Syne Tactile', sans-serif;
         }
+        #notification {
+            display: none;
+            color: black; 
+            position: absolute; 
+            top: 20px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            padding: 10px;
+            background-color: white; 
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            z-index: 1000; 
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="https://images.unsplash.com/photo-1562619371-b67725b6fde2?q=80&auto=format&fit=crop" alt="Close-up of pink and blue liquid">
-    </div>
-
 
     <main>
       <section>
@@ -77,11 +97,20 @@
       </section>
     </main>
 
+    
+
     <div id="listContainer">
         <input type="text" id="colorInput" placeholder="Enter a shade of pink">
         <button id="addColorBtn">Add Color</button>
         <ul id="colorList"></ul>
     </div>
+
+    <li style="background-color: ${color};">
+        <div class="color-dot" style="background-color: ${color};"></div>
+       
+    </li>
+    
+    <div id="notification"></div> <!-- Notification area -->
 
     <div id="chartContainer">
         <canvas id="colorChart"></canvas>
@@ -152,6 +181,17 @@
             }
         });
 
+        // Load saved data from local storage when the page loads
+        window.onload = function() {
+            const savedData = JSON.parse(localStorage.getItem('pieChartData')) || [];
+            savedData.forEach(item => {
+                addColorToList(item.label, item.color);
+                labels.push(item.label);
+                colors.push(item.color);
+            });
+            updateChart();
+        };
+
         document.getElementById('addColorBtn').addEventListener('click', function() {
             const colorInput = document.getElementById('colorInput').value.toLowerCase();
             if (colorInput.includes('pink')) {
@@ -159,7 +199,14 @@
                 addColorToList(colorInput, randomPink);
                 labels.push(colorInput);
                 colors.push(randomPink);
+                
+                // Save the new color to local storage
+                saveDataToLocalStorage(colorInput, randomPink);
+                
                 updateChart();
+                
+                // Show success message
+                showNotification(`Color "${colorInput}" added successfully!`);
             } else {
                 alert('Please enter a type of pink!');
             }
@@ -179,10 +226,47 @@
             colorChart.data.datasets[0].backgroundColor = colors;
             colorChart.update();
         }
+
+        // Function to save data to local storage
+        function saveDataToLocalStorage(label, color) {
+            const savedData = JSON.parse(localStorage.getItem('pieChartData')) || [];
+            savedData.push({ label, color });
+            localStorage.setItem('pieChartData', JSON.stringify(savedData));
+        }
+
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.innerText = message;
+            notification.style.display = 'block';
+
+            // Automatically hide the notification after 3 seconds
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
+
+        const colorList = document.getElementById('colorList');
+
+colorList.addEventListener('mouseover', (e) => {
+    if (e.target.closest('li')) {
+        const colorDot = e.target.closest('li').querySelector('.color-dot');
+        const color = colorDot.style.backgroundColor; // Get the background color of the dot
+        e.target.closest('li').style.backgroundColor = color; // Set the list item's background color
+    }
+});
+
+colorList.addEventListener('mouseout', (e) => {
+    if (e.target.closest('li')) {
+        e.target.closest('li').style.backgroundColor = ''; // Reset background color
+    }
+});
     </script>
+
 </body>
 </html>
 <!-- partial -->
   <script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
 </body>
 </html>
+

@@ -1,0 +1,746 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    /* overflow-x: hidden; Optional: Prevents horizontal scrolling */
+}
+
+/* HEADER BAR -------------------------------------------------------------- */
+#header-bar {
+    position: fixed; /* Fix the header at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12vh; /* Height of the header */
+    background-color: black;
+    opacity: 80%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center; /* Vertically center title contents */
+    z-index: 1000; /* Ensure the header is always above content */
+}
+
+.title {
+    display: flex;
+    gap: .75vw;
+    margin-left: 2vw;
+}
+
+/* Letter 1 - P */
+@keyframes rotateP {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    30% {
+        transform: scale(1.1) rotate(5deg);
+    }
+    60% {
+        transform: scale(1.2) rotate(-10deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* Letter 2 - I */
+@keyframes rotateI {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    25% {
+        transform: scale(1.2) rotate(-15deg);
+    }
+    75% {
+        transform: scale(1.1) rotate(8deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* Letter 3 - L */
+@keyframes rotateL {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    40% {
+        transform: scale(1.2) rotate(20deg);
+    }
+    80% {
+        transform: scale(1.1) rotate(-10deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* Letter 4 - L2 */
+@keyframes rotateL2 {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.3) rotate(-20deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+
+#P {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    animation: rotateP 4s steps(4) infinite; 
+}
+
+#I {
+    margin-top: 2.60vh;
+    margin-bottom: 2.60vh;
+    animation: rotateI 4s steps(4) infinite;
+    animation-delay: 0.3s;
+}
+
+#L {
+    margin-top: 3.5vh;
+    margin-bottom: 3.5vh;
+    animation: rotateL 4s steps(4) infinite;
+    animation-delay: 0.5s;
+}
+
+#L2 {
+    margin-top: 2.60vh;
+    margin-bottom: 2.60vh;
+    animation: rotateL2 4s steps(4) infinite;
+    animation-delay: 0.7s;
+}
+
+#B {
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    margin-left: 1.25vw;
+    animation: rotateP 4s steps(4) infinite;
+    animation-delay: 0.9s;
+}
+
+#O {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    animation: rotateI 4s steps(4) infinite;
+    animation-delay: 1.1s;
+}
+
+#T {
+    margin-top: 2.60vh;
+    margin-bottom: 2.60vh;
+    animation: rotateL 4s steps(4) infinite;
+    animation-delay: 1.3s;
+}
+
+#T2 {
+    margin-top: 3.25vh;
+    margin-bottom: 3.5vh;
+    animation: rotateL2 4s steps(4) infinite;
+    animation-delay: 1.5s;
+}
+
+#L3 {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    animation: rotateP 4s steps(4) infinite;
+    animation-delay: 1.7s;
+}
+
+#E {
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    animation: rotateI 4s steps(4) infinite;
+    animation-delay: 1.9s;
+}
+
+#marker{
+   margin-top: 1vh; 
+   margin-left: 3vw;
+   height: 5vh;
+}
+
+#share-button{
+    border-radius: 1.5rem;
+    background-color: #f9842a;
+    height: 5vh;
+    width: 8vw;
+    margin-left: 43vw;
+    margin-top: .5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    border: 2px solid transparent
+    
+}
+#share-button:hover {
+    background-color: transparent; 
+    color: white;
+    border-color: white;}
+
+#line-icon{
+    margin-top: 1vh; 
+    margin-left: 2.5vw;
+    height: 5vh;
+
+}
+
+/* SIDE BAR -----------------------------------------------------------------*/
+.sidebar {
+    width: 23vw; 
+    height: calc(100vh - 50px); 
+    background-color: black; 
+    color: white;
+    position: fixed;
+    left: 0; 
+    top: 12vh; 
+    transition: width 0.3s ease; 
+    overflow: hidden; 
+    
+}
+
+#sidebar-text{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 4vw;
+    margin-top: 15vw;
+    font-size: .8vw; 
+}
+
+#barmarker1{
+    width:2vw;
+    
+}
+
+.toggle {
+    position: fixed;
+    left: 23vw; 
+    top: 450px; 
+    background-color: #34495e; 
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    transition: left 0.3s ease; 
+    z-index: 1; 
+}
+
+.collapsed {
+    width: 50px; 
+}
+
+.collapsed ~ .toggle {
+    left: 50px; 
+}
+
+.sidebar h2,
+.sidebar p {
+    visibility: visible; 
+}
+
+.collapsed .sidebar h2,
+.collapsed .sidebar p {
+    visibility: hidden; 
+   
+}
+/* MAIN LAYOUT --------------------------------------------------------------*/
+
+/* MAIN LAYOUT -------------------------------------------------------------- */
+#flex-boxes {
+    display: flex;
+    width: 100%;
+    background-color: white;
+    /* visibility: hidden; */
+    /* height: 100%; Remove this to allow the content to expand naturally */
+}
+
+#page1, #page2, #page3 {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: flex-start; /* Optional: Align items to the top */
+}
+
+#page1 {
+    flex: 1;
+}
+
+#page2 {
+    flex: 2;
+   
+}
+
+#page3 {
+    flex: 1;
+}
+
+/* PAGE 1----------------------------------------------------------------------------------- */
+
+#enter{
+    width:20vw;
+    height: 35vh;
+    margin-top: 8vw;
+    margin-left: 2vw;
+    transition: transform 0.3s ease; 
+ }
+ 
+ #enter:hover {
+     transform: scale(1.1); 
+ }
+ 
+ #globe{
+     margin-top: 30vw;
+     margin-left: -20vw;
+     width:20vw;
+     height:35vw ;
+     transition: transform 0.3s ease; 
+ }
+
+ #globe:hover {
+    transform: scale(1.1); 
+}
+
+#yield{
+    margin-top: 70vw;
+    margin-left: -20vw;
+    width: 25vw;
+}
+
+#yield:hover {
+    transform: scale(1.1); 
+}
+
+#square-marker{
+    margin-top: 70vw;
+    margin-left: -7vw;
+    width:7vw;
+}
+
+#square-marker:hover {
+    transform: scale(1.2); 
+}
+
+#roadwork{
+    margin-top: 105vw;
+    margin-left: -22vw;
+    width:20vw;
+}
+
+#roadwork:hover {
+    transform: scale(1.2); 
+}
+
+#typebottle5{
+    margin-top: 98vw;
+    margin-left: -5vw;
+    width: 6vw;
+}
+
+#typebottle5:hover {
+    transform: scale(1.2); 
+}
+/* PAGE 2 -----------------------------------------------------------------------------------*/
+
+#bottle {
+    width: 18vw;
+    height: 19.5vw;
+    margin-top: 8vw;
+    margin-left: 3vw;
+    transition: transform 0.3s ease; 
+}
+
+#bottle:hover {
+    transform: scale(1.1); 
+}
+
+#clock-arrow1{
+    width: 3.5vw;
+    margin-top: 8vw ;
+    margin-left: 1vw;;
+    transition: transform 0.3s ease; 
+}
+
+#clock-arrow1:hover {
+    transform: scale(1.3); 
+}
+
+#clock-arrow2{
+    width: 3.5vw;
+    margin-top: 12vw ;
+    margin-left: -3.4vw;;
+    transition: transform 0.3s ease; 
+}
+
+#clock-arrow2:hover {
+    transform: scale(1.3); 
+}
+
+#clock-arrow3{
+    width: 3.5vw;
+    margin-top: 16vw ;
+    margin-left: -3.4vw;;
+    transition: transform 0.3s ease; 
+}
+
+#clock-arrow3:hover {
+    transform: scale(1.3); 
+}
+
+#clock-arrow4{
+    width: 3.5vw;
+    margin-top: 20vw ;
+    margin-left: -3.4vw;;
+    transition: transform 0.3s ease; 
+}
+
+#clock-arrow4:hover {
+    transform: scale(1.3); 
+}
+
+#clock-arrow5{
+    width: 3.5vw;
+    margin-top: 24vw ;
+    margin-left: -3.4vw;;
+    transition: transform 0.3s ease; 
+}
+
+#clock-arrow5:hover {
+    transform: scale(1.3); 
+}
+
+#salute{
+    width: 8vw;
+    margin-top: 30vw;
+    margin-left: -23vw;
+    transition: transform 0.3s ease; 
+}
+
+#salute:hover {
+    transform: scale(1.2); 
+}
+
+#frown{
+    width: 8vw;
+    margin-top:41.1vw;
+    margin-left: -8vw;
+    transition: transform 0.3s ease; 
+}
+
+#frown:hover {
+    transform: scale(1.2); 
+}
+
+#cropcircle{
+    width: 38vw;
+    margin-top: 34vw;
+    margin-left: 1.8vw;
+    transition: transform 0.3s ease; 
+}
+
+#cropcircle:hover {
+    transform: scale(1.1); 
+}
+
+#smile{
+    width:8vw;
+    margin-top: 50.4vw;
+    margin-left: -47.8vw;
+    transition: transform 0.3s ease; 
+}
+
+#smile:hover {
+    transform: scale(1.2); 
+}
+
+#oneway{
+    height: 24vw;
+    margin-top: 8vw;
+    margin-left: 20vw;
+    width:20vw;
+    transition: transform 0.3s ease; 
+}
+
+#oneway:hover {
+    transform: scale(1.1); 
+}
+
+#rightturn{
+    width: 10vw;
+    margin-top: 21.1vw;
+    margin-left: -21vw;
+    transition: transform 0.3s ease; 
+}
+
+#rightturn:hover {
+    transform: scale(1.2); 
+}
+
+#upsidedown{
+    width: 16.5vw;
+    margin-top: 60vw;
+    margin-left: -20vw;
+    transition: transform 0.3s ease; 
+}
+
+#upsidedown:hover {
+    transform: scale(1.2); 
+}
+
+#twistcap{
+    width: 12vw;
+    margin-top:60vw;
+    margin-left: 19.5vw;
+    transition: transform 0.3s ease; 
+}
+
+#twistcap:hover {
+    transform: scale(1.2); 
+}
+
+#small-pill{
+    width: 5vw;
+   margin-top: 70vw;
+   margin-left: -47.4vw;
+   transition: transform 0.3s ease; 
+}
+
+#small-pill:hover {
+    transform: scale(1.3); 
+}
+
+
+
+#small-pill2{
+    width: 5vw;
+   margin-top: 77vw;
+   margin-left: -5vw;
+   transition: transform 0.3s ease; 
+}
+
+#small-pill2:hover {
+    transform: scale(1.3); 
+}
+
+#small-pill3{
+    width: 5vw;
+   margin-top: 83.5vw;
+   margin-left: -5vw;
+   transition: transform 0.3s ease; 
+}
+
+#small-pill3:hover {
+    transform: scale(1.3); 
+}
+
+#trafficlight{
+    width: 15vw;
+    margin-top: 67vw;
+    margin-left: 4vw;
+    transition: transform 0.3s ease; 
+}
+
+#trafficlight:hover {
+    transform: scale(1.2); 
+}
+
+#caps{
+    width:20vw;
+    margin-top: 67vw;
+    margin-left: 3vw;
+}
+
+#caps:hover {
+    transform: scale(1.1); 
+}
+    
+
+/* PAGE 3 ----------------------------------------------------------------------*/
+
+#pill1{
+    margin-top: 8vw;
+    margin-left: 4vw;
+    width: 18vw;
+    transition: transform 0.3s ease; 
+}
+
+#pill1:hover {
+    transform: scale(1.1); 
+}
+
+#pill2{
+    margin-top: 32vw;
+    width: 18vw;
+    margin-left: -18vw;
+    transition: transform 0.3s ease; 
+}
+
+#pill2:hover {
+    transform: scale(1.1); 
+}
+
+#retrievebottle{
+    width:10vw;
+    margin-top: 30vw;
+    margin-left: -27vw;
+    transition: transform 0.3s ease; 
+}
+
+#retrievebottle:hover {
+    transform: scale(1.2); 
+}
+
+#typebottle{
+    width: 5vw;
+    margin-top: 56.5vw;
+    margin-left: -20vw;
+    transition: transform 0.3s ease; 
+}
+
+#typebottle:hover {
+    transform: scale(1.2); 
+}
+
+#typebottle2{
+    width: 5vw;
+    margin-top: 56.5vw;
+    margin-left: 1vw;
+    transition: transform 0.3s ease; 
+}
+
+#typebottle2:hover {
+    transform: scale(1.2); 
+}
+
+#typebottle3{
+    width: 5vw;
+    margin-top: 56.5vw;
+    margin-left: 1vw;
+    transition: transform 0.3s ease; 
+}
+
+#typebottle3:hover {
+    transform: scale(1.2); 
+}
+
+#typebottle4{
+    width: 5vw;
+    margin-top: 56.5vw;
+    margin-left: 1vw;
+    transition: transform 0.3s ease; 
+}
+
+#typebottle3:hover {
+    transform: scale(1.2); 
+}
+
+
+
+/* ZOOM FUNCTIONALITY ------------------------------------------------------- */
+#flex-boxes {
+    transition: transform 0.3s ease; /* Smooth transition for zoom */
+    transform-origin: center; /* Set the point to scale from (center by default) */
+    position: relative; /* Make sure it's relative to its position */
+    overflow: hidden; /* Prevent overflow */
+}
+
+#flex-boxes img {
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    transform-origin: center; /* Scale from the center of the image */
+}
+
+.zoomed {
+    transform: scale(1.2); 
+}
+#zoom-button {
+    position: fixed; /* Keeps the Zoom In button fixed on screen */
+    bottom: 2vh; 
+    right: 2vw; 
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 1001; /* Ensures the button is above other content */
+}
+
+#zoom-button:hover {
+    background-color: #f76500;
+}
+
+#zoomOutButton {
+    position: fixed; /* Keeps the Zoom Out button fixed on screen */
+    bottom: 2vh; 
+    right: 10vw; /* Adjusted right positioning for separation from Zoom In button */
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 1001; /* Ensures the button is above other content */
+}
+
+#zoomOutButton:hover {
+    background-color: #f76500;
+}
+
+#map-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20vw;
+    width: 50px;          /* Button width */
+    height: 50px;         /* Button height */
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50%;   /* Makes it circular */
+    font-size: 24px;      /* Font size for the "+" symbol */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+#map-button:hover {
+    background-color:#f76500;
+}
+
+#map{
+    position:absolute;
+}
+
+/* #zoom-out-button {
+    position: fixed;
+    bottom: 2vh;
+    right: 2vw;
+    padding: 10px 20px;
+    background-color: #f9842a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 1001;
+}
+
+#zoom-out-button:hover {
+    background-color: #f76500;
+} */
+
+/* MEDIA QUERIES------------------------------------------- */
+
+@media screen and (max-width:480px){
+
+#flex-boxes{ flex-wrap: wrap;}
+
+}
