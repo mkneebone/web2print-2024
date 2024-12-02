@@ -1,0 +1,371 @@
+/* style.css */
+
+/* General Reset */
+body {
+    margin: 0; /* Remove default browser margin */
+    font-family: 'Arial', sans-serif; /* Set default font */
+    background-color: #E4E2DD; /* Background color for the entire site */
+  }
+  
+  /* Content Wrapper */
+  .content-wrapper {
+    margin: 10vh 15vh; /* 10vh margin top/bottom, 60vh margin left/right */
+    box-sizing: border-box; /* Include padding/margin in width/height calculations */
+  }
+
+  
+  /* Images Underneath Navigation */
+  .nav-images {
+    position: relative; /* Enable absolute positioning for child images */
+    width: 100%; /* Section spans the full width of the content area */
+    text-align: center; /* Center content inside this section */
+    margin-bottom: 10vh; /* Add 10vh space between Title Illustration and Black Lines */
+  }
+  
+  /* Eyes Illustration */
+  .nav-image:first-child {
+    z-index: 1; /* Place Eyes Illustration behind */
+    position: relative; /* Relative positioning for stacking */
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image */
+  }
+  
+  /* Title Illustration */
+  .nav-image:last-child {
+    z-index: 2; /* Place Title Illustration in front */
+    position: absolute; /* Absolute positioning for overlap */
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    top: calc(100% - 10vh); /* Position Title Illustration to overlap bottom 10vh of Eyes Illustration */
+    left: 0; /* Align to the left edge of the container */
+  }
+  
+ /* Black Lines Styling */
+.lines {
+    position: relative; /* Position relative to allow margin adjustments */
+    width: calc(100%); /* Full width minus the content wrapper's horizontal margins */
+    margin: 0 auto; /* Center the lines horizontally within the content wrapper */
+    padding-top: 10vh; /* Add spacing between the Title Illustration and the black lines */
+  }
+  
+  /* Thick Black Line */
+  .thick-line {
+    height: 8px; /* Thickness for the thick line */
+    background-color: #2E2E2E; /* Line color */
+  }
+  
+  /* Thin Black Line */
+  .thin-line {
+    height: 3px; /* Thickness for the thin line */
+    background-color: #2E2E2E; /* Line color */
+    margin-top: 4px; /* Space between lines */
+  }
+  
+  
+  
+  /* Header Section Styling */
+  .blog-header {
+    margin-top: 20px; /* Space between header and black lines */
+    text-align: left; /* Align header text to the left */
+    width: 25vw; /* Header spans one-fourth of viewport width */
+    font-family: 'Georgia', serif; /* Set font to Georgia */
+  }
+  
+  /* Title and Subtitle Styling */
+  .title-container h1 {
+    font-size: 2rem; /* Font size for the title */
+  }
+  
+  .title-container .subtitle {
+    font-size: 1rem; /* Font size for the subtitle */
+    line-height: 1.5; /* Improve readability for multiline text */
+  }
+  
+/* Layered Images Section */
+.layered-images {
+    position: relative; /* Enable absolute positioning for child images */
+    width: 100%; /* Section spans the full width of the content area */
+    height: 500px; /* Fixed height for the layered images section */
+    margin: 0 auto; /* Center the section */
+  }
+  
+  .layered-image-container {
+    position: absolute; /* Allow images to be scattered */
+    width: 300px; /* Fixed width for each image */
+    height: auto; /* Maintain aspect ratio */
+    display: flex; /* Enable stacking of image and overlay */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+  }
+  
+  .layered-image {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    transition: filter 0.3s; /* Smooth hover effect */
+  }
+  
+  .layered-image:hover {
+    filter: brightness(0.5); /* Darken the image for readability */
+  }
+  
+  .image-overlay {
+    position: absolute; /* Position text over the image */
+    color: white; /* White text for contrast */
+    font-size: 1.2rem; /* Adjust font size */
+    font-weight: bold; /* Bold text for emphasis */
+    text-align: center; /* Center-align text */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); /* Add shadow for readability */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s; /* Smooth fade-in on hover */
+    pointer-events: none; /* Prevent interaction with text */
+  }
+  
+  .layered-image-container:hover .image-overlay {
+    opacity: 1; /* Show text on hover */
+  }
+  
+  /* Typewriter Section Styling */
+  .typewriter-section {
+    position: relative; /* Position relative to allow button positioning */
+    width: 100%; /* Full width of the content area */
+    margin: 20px auto; /* Center the section with vertical spacing */
+    text-align: center; /* Center-align the content */
+    z-index: 1; /* Place behind the layered images */
+  }
+  
+  .typewriter-image {
+    width: 80%; /* Adjust the size of the typewriter */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image */
+  }
+  
+  /* TYPE Button Styling */
+  .typewriter-button {
+    position: absolute; /* Position the button within the typewriter image container */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%) skew(-15deg); /* Center and skew to create a parallelogram */
+    padding: 10px 30px; /* Add padding for size */
+    font-size: 1.2rem; /* Larger font size for readability */
+    font-family: 'Georgia', serif; /* Use Georgia font for consistency */
+    font-weight: bold; /* Bold text for emphasis */
+    background-color: #FFFFFF; /* White button background */
+    color: #2E2E2E; /* Dark text color */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+    text-align: center; /* Center-align text */
+    z-index: 2; /* Ensure it sits above the typewriter image */
+  }
+  
+  /* Text Resetting for Skew */
+  .typewriter-button span {
+    display: inline-block;
+    transform: skew(15deg); /* Reverse skew on the text to keep it horizontal */
+  }
+  
+  /* Hover Effect */
+  .typewriter-button:hover {
+    background-color: #2E2E2E; /* Darken background on hover */
+    color: #FFFFFF; /* Change text to white on hover */
+  }
+  
+  
+  
+  /* Hover Effect */
+  .layered-image:hover {
+    filter: brightness(0.5); /* Darken the image for readability */
+  }
+  
+  /* Placeholder Text on Hover */
+  .layered-image:hover::after {
+    content: "placeholder text"; /* Display placeholder text */
+    position: absolute; /* Overlay the text */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to exact center */
+    color: white; /* White text for contrast */
+    font-size: 1.2rem; /* Adjust font size */
+    font-weight: bold; /* Bold font for emphasis */
+    text-align: center; /* Center-align text */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); /* Add shadow for readability */
+    z-index: 3; /* Ensure text is above the image */
+    pointer-events: none; /* Prevent interaction with text */
+  }
+  
+  
+  /* TYPE Button Styling */
+  .type-button {
+    position: absolute; /* Place button in the layered images section */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to exact center */
+    z-index: 2; /* Place above the layered images */
+    padding: 10px 20px; /* Button padding */
+    font-size: 1rem; /* Font size for button text */
+    font-family: 'Georgia', serif; /* Set font to Georgia */
+    background-color: #FFFFFF; /* White button background */
+    color: #2E2E2E; /* Dark text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth hover effect */
+  }
+  
+  .type-button:hover {
+    background-color: #444; /* Darken background on hover */
+  }
+  
+  /* Modal Styling */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stays in place even when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%; /* Cover the full screen */
+    height: 100%; /* Cover the full screen */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    z-index: 10; /* Place above other content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+  }
+  
+  .modal-content {
+    position: relative; /* For internal content alignment */
+    background-image: url('images/paper-background.svg'); /* Background for modal */
+    background-size: cover; /* Cover the modal area */
+    background-repeat: no-repeat; /* Prevent repeating */
+    width: 80%; /* Make the modal span 80% of the screen */
+    max-width: 600px; /* Max width for larger screens */
+    padding: 20px; /* Internal padding */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Center-align the content */
+    color: #000; /* Text color */
+    font-family: 'Georgia', serif; /* Use Georgia font for text */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+  }
+  
+  textarea {
+    width: 100%; /* Full width inside the modal */
+    height: 100px; /* Fixed height */
+    margin: 10px 0; /* Spacing above and below */
+    padding: 10px; /* Padding inside */
+    font-size: 1rem; /* Font size for text */
+    border: 1px solid #ccc; /* Border around the box */
+    border-radius: 5px; /* Rounded corners */
+    background-color: transparent; /* Transparent background */
+    color: #000; /* Black text */
+    font-family: 'Arial', sans-serif; /* Font for the text */
+  }
+  
+  textarea::placeholder {
+    color: #888; /* Placeholder color */
+  }
+  
+  button#post-comment {
+    padding: 10px 20px; /* Add padding around the text */
+    font-size: 1rem; /* Font size */
+    font-family: 'Georgia', serif; /* Use Georgia font */
+    background-color: #2E2E2E; /* Dark button background */
+    color: #fff; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  button#post-comment:hover {
+    background-color: #444; /* Lighter gray on hover */
+  }
+  
+  
+  /* Ensure the comments-section has relative positioning */
+  .comments-section {
+    position: relative; /* Constrain child elements like .print-button */
+    padding: 20px; /* Add padding around the section */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque background */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  /* Text Resetting for Skew */
+  .print-button span {
+    display: inline-block;
+    transform: skew(15deg); /* Reverse skew to keep text horizontal */
+  }
+  
+  /* Hover Effect */
+  .print-button:hover {
+    background-color: #2E2E2E; /* Darken background on hover */
+    color: #FFFFFF; /* Change text to white on hover */
+  }
+  
+
+ /* Footer Section Styling */
+.blog-footer {
+    background-image: url('images/paper-background.svg'); /* Background image for footer */
+    background-size: cover; /* Ensure the image covers the footer */
+    background-repeat: no-repeat; /* Prevent repeating */
+    background-position: center; /* Center the background image */
+    color: #000; /* Black text for contrast */
+    font-family: 'Sometype Mono', monospace; /* Set font to Sometype Mono */
+    padding: 20px; /* Add padding around the footer content */
+    border-top: 1px solid #ddd; /* Optional: Add a top border for separation */
+  }
+  
+  /* Comments Section Styling */
+  .comments-section {
+    position: relative; /* Ensure child elements are positioned correctly */
+    padding: 20px; /* Add spacing around the content */
+    background-color: transparent; /* Transparent background to show the footer's image */
+    border-radius: 10px; /* Optional: Rounded corners for comments section */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-top: 20px; /* Space above the comments section */
+  }
+  
+  /* Comments Header Image */
+.comments-header {
+    width: 100%; /* Make the image span the full width of the footer */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Prevent inline spacing issues */
+    z-index: 1; /* Ensure it appears behind the print button */
+  }
+  
+ /* Comments List Styling */
+#comments-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+  
+  #comments-list li {
+    margin-bottom: 10px; /* Space between comments */
+    padding: 10px; /* Space inside each comment */
+    background-color: rgba(255, 255, 255, 0.5); /* White background with 50% opacity */
+    border-radius: 5px; /* Rounded corners for comments */
+    font-family: 'Georgia', serif; /* Use Georgia font for comment text */
+    font-size: 1rem; /* Set font size */
+  }
+  
+   /* PRINT Button Styling */
+   .print-button {
+    position: absolute; /* Position relative to .comments-section */
+    top: 10px; /* Offset from the top of the comments-section */
+    right: 10px; /* Offset from the right of the comments-section */
+    padding: 10px 20px; /* Add padding for the button */
+    font-size: 1rem; /* Font size for the button text */
+    font-family: 'Georgia', serif; /* Use Georgia font */
+    background-color: #FFFFFF; /* White button background */
+    color: #2E2E2E; /* Dark button text */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Pointer cursor on hover */
+    transform: skew(-10deg); /* Skew to create parallelogram shape */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    transition: background-color 0.3s; /* Smooth hover effect */
+  }
+  
+  .print-button:hover {
+    background-color: #444; /* Darken background on hover */
+    color: #FFF; /* White text on hover */
+  }
