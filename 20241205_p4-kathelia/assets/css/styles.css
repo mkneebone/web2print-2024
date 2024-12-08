@@ -1,0 +1,148 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4 url("../images/Background.jpeg") no-repeat center / cover fixed;
+}
+
+.search-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-results {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 5px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  z-index: 10;
+}
+
+.search-results li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.search-results li:last-child {
+  border-bottom: none;
+}
+
+.search-results li:hover {
+  background: #f0f0f0;
+}
+
+#lightbox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: grid;
+  place-items: center;
+  z-index: 999;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#lightbox.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+#lightbox img {
+  max-width: 70%;
+  max-height: 70%;
+  border-radius: 10px;
+}
+
+#lightbox p {
+  color: white;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.button-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+.open-page-button {
+  font-size: 18px;
+  padding: 10px 20px;
+  color: white;
+  background: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.open-page-button:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+.open-page-button:active {
+  background: #003f7f;
+  transform: translateY(0);
+}
+
+@media print {
+  body * {
+    display: none !important;
+  }
+
+  #lightbox {
+    width: 100%;
+    height: auto !important;
+    position: absolute;
+    right: 0;
+    top: 250px;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background-color: transparent;
+    display: block !important;
+    /* border: 2px solid black; */
+  }
+
+  #lightbox-image {
+    max-width: 100% !important;
+    height: auto !important;
+    width: 100% !important;
+    border-radius: 0 !important;
+    display: block !important;
+    /* border: 2px solid black; */
+  }
+
+  #lightbox p {
+    display: none !important;
+  }
+}
+
+

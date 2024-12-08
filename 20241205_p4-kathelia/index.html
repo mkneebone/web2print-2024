@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Garden of Earthly Delights</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Search Bar -->
+  <div class="search-container">
+    <label for="search-input" class="visually-hidden"></label>
+    <input type="text" id="search-input" class="search-input" placeholder="Search..." aria-label="Search">
+    <ul id="search-results" class="search-results"></ul>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" role="dialog" aria-hidden="true">
+    <img id="lightbox-image" src="" alt="">
+    <p id="lightbox-text">Your descriptive text here</p>
+  </div>
+
+  <!-- Button -->
+  <div class="button-container">
+    <button id="openPageButton" class="open-page-button">info</button>
+  </div>
+
+    <script src="assets/js/index.js"></script>
+</body>
+</html>
