@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Basic styling for the gallery */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4e4c3;
+    }
+
+    /* Title image (instead of text) */
+    .gallery-title {
+      display: block;
+      width: 100%;
+      max-width: 1000px; /* Adjust max-width as needed */
+      margin: 20px auto; /* Center the image with top margin */
+      height: auto; /* Maintain aspect ratio */
+    }
+
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 10px;
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures images fill the container without distortion */
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05); /* Slight zoom effect on hover */
+    }
+
+    /* Caption (if used) */
+    .gallery-item:hover .caption {
+      opacity: 1;
+    }
+
+    /* Mobile-friendly adjustments */
+    @media (max-width: 768px) {
+      .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Smaller images on smaller screens */
+      }
+      .gallery-title {
+        max-width: 100%; /* Full-width title image on mobile */
+      }
+    }
+
+    /* Extra small devices (portrait phones, small tablets) */
+    @media (max-width: 480px) {
+      .gallery-container {
+        grid-template-columns: 1fr; /* Single column for very small devices */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Gallery Title Image -->
+  <img src="sharingiscaring.png" alt="Gallery Title" class="gallery-title">
+
+  <div class="gallery-container">
+    <div class="gallery-item">
+      <img src="pineapple-pie.webp" alt="Image 1">
+    </div>
+    <div class="gallery-item">
+      <img src="picklecupcake.webp" alt="Image 2">
+    </div>
+    <div class="gallery-item">
+      <img src="peppermint-cookie.webp" alt="Image 3">
+    </div>
+    <div class="gallery-item">
+      <img src="carrot-icecream.jpg" alt="Image 4">
+    </div>
+    <!-- Add more images here as needed -->
+    <div class="gallery-item">
+      <img src="friedblueberry.jpg" alt="Image 5">
+    </div>
+    <div class="gallery-item">
+      <img src="Pineapple-Cookies.jpg" alt="Image 6">
+    </div>
+  </div>
+
+</body>
+</html>

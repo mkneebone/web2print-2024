@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carousel Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> <!-- Your CSS link here -->
+</head>
+<body>
+
+<!-- Landing Page Section -->
+<section class="landing-page">
+  <div class="image-container">
+    <img class="landing-image" src="Baking Roulette Title.png">
+    <img class="landing-image" src="hi3.png">
+  
+
+  </div>
+  <button id="scroll-btn" class="scroll-btn">
+    <img src="arrow2.png" alt="Scroll down" class="scroll-icon">
+  </button>
+</section>
+</section>
+
+<!-- Information Container-->
+<div class="information-container">
+<!-- About Section !-->
+<a href="page2.html">
+<button class="about-btn">
+  <img src="about.png">
+ </button>
+ </a>
+ 
+<!-- Print Section -->
+<button class="print-btn" onclick="printContent()">
+  <img src="print.png">
+ </button>
+</div>
+
+  <!-- Gallery Section -->
+  <a href="page3.html"> <!-- Change 'anotherPage.html' to your desired link -->
+    <button class="gallery-btn">
+      <img src="share.png" alt="New Button"> 
+    </button>
+  </a>
+
+
+ <!-- Shuffle Button -->
+<button class="shuffle-btn">
+  <img src="Shuffle Button Roulette.png" class ="original-img">
+  <img src="Shuffle Button 2.png" class ="clicked-img">
+</button>
+
+
+<!-- Carousels Section -->
+<section class="carousels">
+  <div class="carousels"></div>
+  <!-- Carousel 1 (Top Carousel) -->
+  <div class="carousel-container">
+    <div class="card-carousel" id="carousel1">
+      <!-- Card 1 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="image-container" style="background-color: #ccc;"></div>
+            <img src="front-carrot.png">
+          </div>
+          <div class="card-back" style="background-image: url('back-carrot.png');"></div>
+        </div>
+      </div>
+
+  
+
+      <!-- Card 2 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="image-container" style="background-color: #ddd;"></div>
+            <img src="front-apple.png">
+          </div>
+          <div class="card-back" style="background-image: url('back-apple.png');"></div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="image-container" style="background-color: #eee;"></div>
+            <img src="front-blueberry.png">
+          </div>
+          <div class="card-back" style="background-image: url('back-blueberry.png');">
+          </div>
+        </div>
+      </div>
+
+
+       <!-- Card 4 -->
+       <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="image-container" style="background-color: #eee;"></div>
+            <img src="front-banana.png">
+          </div>
+          <div class="card-back" style="background-image: url('back-banana.png');">
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+       <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="image-container" style="background-color: #eee;"></div>
+            <img src="back-pickle2.png">
+          </div>
+          <div class="card-back" style="background-image: url('back-pickle1.png');">
+          </div>
+        </div>
+      </div>
+
+<!-- Card 6 -->
+<div class="card">
+  <div class="card-inner">
+    <div class="card-front">
+      <div class="image-container" style="background-color: #eee;"></div>
+      <img src="front-strawberry.png">
+    </div>
+    <div class="card-back" style="background-image: url('back-strawberry.png');">
+    </div>
+  </div>
+</div>
+
+<!-- Card 7 -->
+<div class="card">
+  <div class="card-inner">
+    <div class="card-front">
+      <div class="image-container" style="background-color: #eee;"></div>
+      <img src="front-mint.png">
+    </div>
+    <div class="card-back" style="background-image: url('back-mint.png');">
+    </div>
+  </div>
+</div>
+
+<!-- Card 8 -->
+<div class="card">
+  <div class="card-inner">
+    <div class="card-front">
+      <div class="image-container" style="background-color: #eee;"></div>
+      <img src="front-caramel.png">
+    </div>
+    <div class="card-back" style="background-image: url('back-caramel.png');">
+    </div>
+  </div>
+</div>
+
+<!-- Card 9 -->
+<div class="card">
+  <div class="card-inner">
+    <div class="card-front">
+      <div class="image-container" style="background-color: #eee;"></div>
+      <img src="front-peppermint.png">
+    </div>
+    <div class="card-back" style="background-image: url('back-peppermint.png');">
+    </div>
+  </div>
+</div>
+      
+
+<!-- Card 10 -->
+<div class="card">
+  <div class="card-inner">
+    <div class="card-front">
+      <div class="image-container" style="background-color: #eee;"></div>
+      <img src="front-pineapple.png">
+    </div>
+    <div class="card-back" style="background-image: url('back-pineapple.png');">
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carousel 2 (Middle Carousel) -->
+  <div class="carousel-container">
+    <div class="card-carousel" id="carousel2">
+      <!-- Card 1 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="image-container" style="background-color: #f4c1c1;"></div>
+            <img src="front-fried.png">
+          </div>
+          <div class="card-back" style="background-image: url('back-fried.png');"></div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="image-container" style="background-color: #f5b5b5;"></div>
+            <img src="front-frosted.png">
+          </div>
+          <div class="card-back" style="background-image: url('back-frosted.png');"></div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="image-container" style="background-color: #f6c2c2;"></div>
+            <img src="front-marbled.png">
+          </div>
+          <div class="card-back" style="background-image: url('back-marbled.png');"></div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="image-container" style="background-color: #f1c2c2;"></div>
+            <img src="front-whipped.png">
+          </div>
+          <div class="card-back" style="background-image: url('back-whipped.png');"></div>
+        </div>
+      </div>
+
+       <!-- Card 5 -->
+       <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="image-container" style="background-color: #f1c2c2;"></div>
+            <img src="front-frozen.png">
+          </div>
+          <div class="card-back" style="background-image: url('back-frozen.png');"></div>
+        </div>
+      </div>
+
+        <!-- Card 6 -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="image-container" style="background-color: #f1c2c2;"></div>
+              <img src="front-filled.png">
+            </div>
+            <div class="card-back" style="background-image: url('back-filled.png');"></div>
+          </div>
+        </div>
+
+
+        <!-- Card 7 -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="image-container" style="background-color: #f1c2c2;"></div>
+              <img src="front-upsidedown.png">
+            </div>
+            <div class="card-back" style="background-image: url('back-upsidedown.png');"></div>
+          </div>
+        </div>
+
+
+           <!-- Card 8 -->
+           <div class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="image-container" style="background-color: #f1c2c2;"></div>
+                <img src="front-pureed.png">
+              </div>
+              <div class="card-back" style="background-image: url('back-pureed.png');"></div>
+            </div>
+          </div> 
+
+
+           <!-- Card 9 -->
+           <div class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="image-container" style="background-color: #f1c2c2;"></div>
+                <img src="front-melted.png">
+              </div>
+              <div class="card-back" style="background-image: url('back-melted.png');"></div>
+            </div>
+          </div> 
+
+
+          <!-- Card 10 -->
+          <div class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="image-container" style="background-color: #f1c2c2;"></div>
+                <img src="back-toasted.png">
+              </div>
+              <div class="card-back" style="background-image: url('back-toasted1.png');"></div>
+            </div>
+          </div> 
+
+    </div>
+  </div>
+
+  <!-- Carousel 3 (Bottom Carousel) -->
+  <div class="carousel-container">
+    <div class="card-carousel" id="carousel3">
+      <!-- Card 1 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="image-container" style="background-color: #c3c9ff;"></div>
+            <img src="front-cake.png">
+          </div>
+          <div class="card-back" style="background-image: url('back-cake.png');"></div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="image-container" style="background-color: #b9c4ff;"></div>
+            <img src="front-cheesecake.png">
+          </div>
+          <div class="card-back" style="background-image: url('back-cheesecake.png');"></div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="image-container" style="background-color: #acc0ff;"></div>
+            <img src="front-icecream.png">
+          </div>
+          <div class="card-back" style="background-image: url('back-icecream.png');"></div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="image-container" style="background-color: #c0d2ff;"></div>
+            <img src="back-donut.png">
+          </div>
+          <div class="card-back" style="background-image: url('back-donut1.png');"></div>
+        </div>
+      </div>
+
+  <!-- Card 5 -->
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        <div class="image-container" style="background-color: #c0d2ff;"></div>
+        <img src="front-pie.png">
+      </div>
+      <div class="card-back" style="background-image: url('back-pie.png');"></div>
+    </div>
+  </div>
+
+    <!-- Card 6 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="image-container" style="background-color: #c0d2ff;"></div>
+          <img src="front-cookie.png">
+        </div>
+        <div class="card-back" style="background-image: url('back-cookie.png');"></div>
+      </div>
+    </div>
+
+
+      <!-- Card 7 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="image-container" style="background-color: #c0d2ff;"></div>
+            <img src="front-croissant.png">
+          </div>
+          <div class="card-back" style="background-image: url('back-croissant.png');"></div>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="image-container" style="background-color: #c0d2ff;"></div>
+            <img src="front-tart.png">
+          </div>
+          <div class="card-back" style="background-image: url('back-tart.png');"></div>
+        </div>
+      </div>
+
+      <!-- Card 9 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="image-container" style="background-color: #c0d2ff;"></div>
+            <img src="front-muffin.png">
+          </div>
+          <div class="card-back" style="background-image: url('back-muffin.png');"></div>
+        </div>
+      </div>
+
+       <!-- Card 10 -->
+       <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="image-container" style="background-color: #c0d2ff;"></div>
+            <img src="front-cupcake.png">
+          </div>
+          <div class="card-back" style="background-image: url('back-cupcake.png');"></div>
+        </div>
+      </div>
+
+    </section>
+
+    </div>
+  </div>
+
+
+
+</section>
+
+
+
+<script src="script.js"></script> <!-- Your JS link here -->
+</body>
+</html>

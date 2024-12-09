@@ -1,109 +1,431 @@
+/* Reset and General Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: #f4e4c3;
+  scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Syne Tactile', sans-serif; 
-    font-size: 14px;
-    white-space: nowrap; 
-    position: relative;
-    margin: 0;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
 }
 
-#chartContainer {
-    float: center;
-    width: 900px;
-    margin-right: 60px;
-    position: fixed;
+/* Landing Page Styles */
+.landing-page {
+  background: #f4e4c3;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 2em;
+  margin-bottom: 100px;
+  margin-top: 100px;
 }
 
-#listContainer { 
-    margin-bottom: 20px; 
+
+
+
+.image-container {
+  height: auto; /* Maintain the aspect ratio */
+  gap: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0;
+
+}
+
+.landing-image {
+  height: auto;
+  transition: opacity 0.5s ease;
+  gap: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+
+}
+
+/* Container holding the images */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+/* Base styles for all images */
+.landing-image {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  opacity: 0; /* Initially hide all images */
+  transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
+  margin: auto;
+}
+/* Container holding the images */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust the height to your desired size */
+  margin: auto;
+}
+
+
+/* Show the first image by default */
+.landing-image:first-child {
+  opacity: 1; /* Make the first image visible */
+  z-index: 1; /* Bring it to the front */
+}
+
+/* When hovering over the first image: hide it and show the second image */
+.landing-page:hover .landing-image:nth-child(1) {
+  opacity: 0; /* Hide the first image */
+  z-index: -1; /* Move it behind */
+}
+
+.landing-page:hover .landing-image:nth-child(2) {
+  opacity: 1; /* Show the second image */
+  z-index: 1; /* Bring it to the front */
+}
+
+
+/* After hover ends: reset back to the first image */
+.landing-page:not(:hover) .landing-image:nth-child(2),
+.landing-page:not(:hover) .landing-image:nth-child(3) {
+  opacity: 0; /* Hide the second and third images when not hovering */
+  z-index: -1; /* Ensure they are behind the first image */
+}
+
+
+#scroll-btn {
+  bottom: 20px;
+  left: 60%;
+  transform: translateX(-50%);
+  z-index: 50;
+  background: none;
+  border: none;
+  margin-top: 800px;
+  margin-right: 100px;
+  margin-left: 250px;
+}
+
+.scroll-icon {
+  width: 100px; /* Adjust size of the arrow */
+  height: auto;
+  transform: translateX(-50%);
+  bottom: 30px;
+
+}
+
+/* Information Container - Position buttons in top left corner */
+.information-container {
+  position: absolute; /* Allow absolute positioning of child elements */
+  top: 0;
+  left: 0; /* Make sure it starts from the left edge */
+  display: flex; /* Use flexbox to position buttons horizontally */
+  gap: 0;
+margin-bottom: 200px; /* Padding around the container */
+margin-left: 50px;
+}
+
+/* About Button */
+.about-btn {
+  padding-top: 50px;
+  gap: 0;
+  background: none;
+  border: none;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+
+.about-btn img {
+  width: 300px; /* Adjust size of the button image */
+  height: auto;
+  margin-top: 800px;
+  position: relative;
+}
+
+/* Print Button */
+.print-btn {
+  padding: 0;
+  background: none;
+  border: none;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+
+}
+
+.print-btn img {
+  width: 260px; /* Adjust size of the button image */
+  height: auto;
+  margin-top: 1000px;
+  margin-left: 975px;
+  cursor: pointer;
+
+}
+
+
+/* Carousels Section */
+.carousels {
+  margin-top: 0;
+  margin-left: 20px;
+  margin-right: 200px;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;  /* Keep the carousels stacked vertically in the container */
+  padding: 0;
+  gap: 0px;
+  flex-wrap: nowrap;
+
+}
+
+/* Carousel Container */
+.carousel-container {
+  width: 700px;  /* Increased the width of the carousel */
+  height: 300px; /* Increased the height of the carousel */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Hide any overflowed cards */
+  perspective: 1000px; /* Add perspective for 3D effect */
+  flex-wrap: nowrap;
+  background: transparent;
+  margin-bottom: 100px;
+
+}
+
+
+/* Card Holder in Each Carousel */
+.card-carousel {
+  display: flex;
+  flex-direction: column;  /* Stack cards vertically */
+  justify-content: flex-start;  /* Align cards to the top */
+  align-items: center;  /* Horizontally center cards */
+  width: 100%;  /* Ensure the carousel takes full width */
+  height: 100%;
+  gap: 0;  /* No gap between cards */
+  padding: 0;  /* Remove any padding */
+  position: relative;
+  overflow: hidden;
+  margin: 0;  /* Ensure no space added */
+  background: transparent;
+}
+
+/* Card Flip Styles */
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  background: transparent;
+}
+
+/* Card Styles */
+.card {
+  background: transparent;
+  width: 100%;  /* Set card width to 100% of the container */
+  height: 100%;  /* Full height of the container */
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;  /* Prevent the card from shrinking */
+  flex-grow: 0;  /* Prevent the card from growing */
+  position: relative;
+  overflow: inherit;
+  z-index: 1;
+  margin: 0;  /* Remove margin between cards */
+  transform: none;  /* Disable scale or transform by default */
+  transition: transform 0.2s ease, z-index 0.s ease;
+}
+
+
+.card:hover .card-inner {
+  transform: rotateY(180deg); /* Flip the card when hovered */
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  color: #db5b29;
+}
+
+/* Front and Back of the Card */
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide the backside when flipped */
+}
+
+.card-back {
+  background-color: #f0f0f0;
+  color: #333;
+  transform: rotateY(180deg);
+  background-size: cover;
+  background-position: center;
+}
+
+.card-front {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+
+}
+
+/* Image Containers inside the Cards */
+.card-front .image-container, .card-back .image-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 0;
+}
+
+/* Ensure images fill the container */
+.card-front img, .card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0;
+
+}
+
+
+button.shuffle-btn {
+  display: flex;
+  justify-content: center;  /* Centers the button horizontally */
+  align-items: center;      /* Centers the button vertically */
+  margin: 0 auto 20px auto; /* Center the button and add space below */
+  background: none;         /* Remove any default background */
+  border: none;             /* Remove any border */
+  padding: 0;               /* Remove padding */
+  cursor: pointer;         /* Add pointer cursor on hover */
+  width: fit-content;  
+  position: relative;
+  margin-top: 0;
     
-    position: relative;
 }
 
-canvas {
-    width: 100% !important;
-    height: 400px !important;
-}
-
-#colorList {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 10px;
-   
-}
-
-#colorList li {
-    margin: 5px 0;
-    padding: 5px;
-   
-}
-
-#colorList li:hover {
-  transition: background-color 0.3s ease;
-}
-
-/* Clear floats if necessary */
-#listContainer::after,
-#chartContainer::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-#colorInput {
-    width: 50%; 
-    padding: 10px; 
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
-    font-size: 16px; 
-    margin-right: 10px; 
-}
-
-#addColorBtn {
-    padding: 10px 15px; 
-    background-color: #ff69b4; 
-    color: white; 
-    border: none; 
-    border-radius: 5px; 
-    font-size: 16px; 
-    cursor: pointer; 
-    transition: background-color 0.3s ease;
-}
-
-#addColorBtn:hover {
-    background-color: #ff1493; /* Darker pink on hover */
-}
-
-#historyContainer {
-    margin-top: 20px;
-    display: none;
-}
-
-#historyList {
-    list-style-type: none;
-    padding: 0;
-}
-
-#historyList li {
-    margin: 5px 0;
-    padding: 5px;
-    border: 1px solid #ddd;
-}
-
-.color-dot {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    border-radius: 50%;
-    transition: transform 0.3s ease; /* Smooth transition for scaling */
-}
-
-#colorList li:hover .color-dot {
-    transform: scale(1.2); /* Enlarge the dot on hover */
+button.shuffle-btn img {
+  max-width: 700px;       /* Ensure the image doesn't overflow */
+  max-height: 700px;  
+  width: auto;
+  height: auto;        /* Maintain aspect ratio */
+  display: block;           /* Remove any inline spacing */
 }
 
 
-#colorList li:hover {
-    background-color: #ffe0f0; /* Light pink on hover */
-    transform: scale(1.02); /* Slightly enlarge the item */
-    transition: background-color 0.3s ease, transform 0.2s ease;
+button.shuffle-btn img {
+  display: none;  /* Initially hide both images */
+}
+
+button.shuffle-btn img.original-img {
+  display: block; /* Display the original image by default */
+}
+
+button.shuffle-btn.clicked img.original-img {
+  display: none; /* Hide original image when clicked */
+}
+
+button.shuffle-btn.clicked img.clicked-img {
+  display: block; /* Show the clicked image when clicked */
+}
+
+.shuffle-btn.clicked {
+  transform: scale(0.95);  /* Slight shrink effect on click */
+  transition: transform 0.1s ease;  /* Smooth transition */
+}
+
+
+
+@media print {
+  /* General page styles for printing */
+  body {
+    visibility: hidden;
+  }
+
+  /* Hide elements that should not appear in the print */
+  .print-btn, .scroll-btn, .landing-page, .information-container, .shuffle-btn {
+    display: none !important;
+  }
+
+  /* Container for printed content */
+  .print-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    page-break-before: always; /* Ensures the content starts on a new page */
+  }
+
+  /* Style for each image */
+  .print-content img {
+    width: 30%; /* Adjust the width to fit three images per row */
+    height: auto;
+    margin-bottom: 20px; /* Space between images */
+    page-break-inside: avoid; /* Prevents images from breaking across pages */
+    border: 1px solid #ddd; /* Optional border for better separation */
+    padding: 10px;
+    background-color: #fff; /* Ensure there's no background color interfering */
+    box-sizing: border-box;
+  }
+
+  /* Ensure the images are printed in a nice row layout */
+  .print-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row; /* Arrange images in a row */
+    width: 100%; /* Take up full width */
+  }
+
+  /* Adjust margins for printed page */
+  @page {
+    size: A4 portrait;
+    margin: 20mm; /* Page margins for a cleaner print layout */
+  }
+}
+
+
+
+.gallery-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 100px;
+  
+  
+}
+
+.gallery-btn img {
+  width: 100%;  /* Adjust width as needed */
+  max-width: 300px;  /* Limit the size of the image */
+  position: absolute;
 }
